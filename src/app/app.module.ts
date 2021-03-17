@@ -5,10 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { MaterialModule } from './material.module';
+
 @NgModule({
+
+
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
 
 
 
@@ -17,7 +21,8 @@ import { LoginComponent } from './components/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
