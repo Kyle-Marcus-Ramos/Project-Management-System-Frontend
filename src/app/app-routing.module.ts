@@ -3,6 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeLayoutComponent } from './components/layout/home-layout/home-layout.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { CalendarModule } from './components/calendar/calendar.module';
+import { DashboardModule } from './components/dashboard/dashboard.module';
+import { KanbanBoardModule } from './components/kanban-board/kanban-board.module';
+import { RegistrationModule } from './components/registration/registration.module';
+import { RoadmapModule } from './components/roadmap/roadmap.module';
 
 
 const routes: Routes = [
@@ -15,12 +20,28 @@ const routes: Routes = [
         component: LoginComponent
       },
     ]
-
-
-
-
-
   },
+  {
+    path: 'calendar',
+    loadChildren: () => CalendarModule
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => DashboardModule
+  },
+  {
+    path: 'kanban-board',
+    loadChildren: () => KanbanBoardModule
+  },
+  {
+    path: 'registration',
+    loadChildren: () => RegistrationModule
+  },
+  {
+    path: 'roadmap',
+    loadChildren: () => RoadmapModule
+  },
+
   { path: '**', redirectTo: '' }
 ];
 
