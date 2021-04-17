@@ -1,0 +1,144 @@
+span {
+  color: white;
+}
+
+.dropdown-menu {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: .7s ease all;
+}
+
+.dropdown-menu.show {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+  transition: .7s ease all;
+}
+
+.notif-menu {
+  right: 0;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: .7s ease all;
+}
+
+.notif-menu.show {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+  transition: .7s ease all;
+}
+
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+.sidebar-right {
+  display: flex;
+}
+
+.bg-custom {
+  width: 100%;
+  position: sticky !important;
+
+  background: #415f7a;
+  color: white;
+  font-family: Opensans-Regular;
+}
+
+.medium {
+  font-size: 2vh;
+}
+
+.lightblue {
+  color: rgb(36, 208, 229);
+}
+
+::ng-deep .mat-badge-content {
+  background-color: #3192A7 !important;
+}
+
+.container {
+  margin: 0 !important;
+}
+
+.navbar {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  top: 0;
+  height: 7.51vh;
+  position: absolute;
+}
+
+.nav-absol {
+  position: absolute;
+}
+
+.navbar a {
+  font-size: 2vh !important;
+}
+
+.mr-auto {
+  margin-right: 350px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.nav-right {
+  font-family: Opensans-Bold;
+  color: rgb(36, 208, 229) !important;
+}
+
+.nav-left {
+  margin-left: 230%;
+}
+
+.navbar .navbar-nav>li>a {
+  text-transform: capitalize;
+
+}
+
+.move-right {
+  padding-left: 10px;
+}
+
+.change-color {
+  color: #0B83CB;
+}
+
+.change-color-sub {
+  font-family: Opensans-Bold;
+  color: #0B83CB;
+}
+
+.notif-dropdown {
+  margin-left: -10rem;
+}
+
+::ng-deep .dropdown-menu .dropdown-item:hover,
+.dropdown-menu a:hover {
+  background-color: #3192A7 !important;
+}
+
+::ng-deep .nav-link .nav-item {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+}
