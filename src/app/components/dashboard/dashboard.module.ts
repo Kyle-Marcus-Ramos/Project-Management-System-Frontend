@@ -14,7 +14,7 @@ import { MaterialModule } from '../../material.module';
         FormsModule,
         MaterialModule
     ],
-    declarations: [DashboardComponent]
+    declarations: []
 })
 
 export class DashboardModule { }
