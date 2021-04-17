@@ -1,0 +1,24 @@
+.footer {
+  background: #415f7a;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+.footer-image {
+  width: 70px;
+  height: 37px;
+  margin-bottom: 5px;
+}
+
+.vertical {
+  display: inline-block
+}
+
+.foo {
+  color: #C2C8D4;
+  font-size: 11pt;
+}
