@@ -14,7 +14,7 @@ import { MaterialModule } from '../../material.module';
         FormsModule,
         MaterialModule
     ],
-    declarations: [KanbanBoardComponent]
+    declarations: []
 })
 
 export class KanbanBoardModule { }

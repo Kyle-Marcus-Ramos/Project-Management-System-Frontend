@@ -14,7 +14,7 @@ import { MaterialModule } from '../../material.module';
         FormsModule,
         MaterialModule
     ],
-    declarations: [LoginComponent]
+    declarations: []
 })
 
 export class WidgetsModule { }
