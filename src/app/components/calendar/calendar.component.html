@@ -1,4 +1,14 @@
-<div class='app-calendar'>
-  <full-calendar [options]="calendarOptions"></full-calendar>
+<div class="s-layout">
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+    
+    <!-- Content -->
+    <main class="s-layout__content">
+      <full-calendar [options]="calendarOptions" style="width: 100%;"></full-calendar>
+    </main>
+  </div>
 
-</div>
+
+
+
+

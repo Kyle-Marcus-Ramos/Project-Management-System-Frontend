@@ -1,0 +1,34 @@
+
+  
+.sidebar{
+    background-color: #101729 !important;;
+}
+
+.footer {
+    background-color: #101729 !important;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+
+    /* padding-left: 500px;  */
+  }
+  
+  .footer-image {
+    width: 70px;
+    height: 37px;
+    margin-bottom: 5px;
+  }
+  
+  .vertical {
+    display: inline-block
+  }
+  
+  .foo {
+    color: #C2C8D4;
+    font-size: 11pt;
+  }
+  
