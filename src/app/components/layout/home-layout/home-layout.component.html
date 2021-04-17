@@ -1,0 +1,12 @@
+<div class="wrapper" *ngIf="path !== '/login' && path !== '/'">
+  <div class="sidebar" data-color="white">
+    <app-sidebar></app-sidebar>
+  </div>
+  <main class="s-layout__content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<div *ngIf="path === '/login' || path === '/'">
+  <router-outlet></router-outlet>
+</div>

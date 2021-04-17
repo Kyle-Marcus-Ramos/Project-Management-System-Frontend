@@ -11,6 +11,9 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { RoadmapComponent } from './components/roadmap/roadmap.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { KanbanBoardComponent } from './components/kanban-board/kanban-board.component';
+import { HomeLayoutComponent } from './components/layout/home-layout/home-layout.component';
+import { SidebarModule } from './components/sidebar/sidebar.module';
+
 
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,6 +39,7 @@ FullCalendarModule.registerPlugins([
     RoadmapComponent,
     DashboardComponent,
     KanbanBoardComponent,
+    HomeLayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,7 @@ FullCalendarModule.registerPlugins([
     MatFormFieldModule,
     MatInputModule,
     FullCalendarModule,
+    SidebarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
