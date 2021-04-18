@@ -59,9 +59,8 @@ To run the project:
  ```shell
     STEP 1: Open terminal of Visual Studio Code (Ctrl + ~) 
   ```
-   ```shell
+  ```shell
     STEP 2: Type "ng serve" to run the project in your localhost:4200
-
   ```
 
 
