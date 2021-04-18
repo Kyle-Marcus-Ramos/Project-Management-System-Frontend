@@ -28,6 +28,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -56,7 +57,8 @@ FullCalendarModule.registerPlugins([
     FullCalendarModule,
     SidebarModule,
     NavbarModule,
-    FooterModule
+    FooterModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,78 @@
-<p>Kanban Board Page</p>
+<!--<p>Kanban Board Page</p>
+-->
+<div class="root">
+
+    <div class="board">
+        Project Board
+            <p class="board-name">
+                [Project name]
+            </p>
+            <div class="board-wrapper">
+                <div class="board-columns" cdkDropListGroup>
+                    <div class="board-column" style="background-color: lightcoral;"*ngFor="let column of board.columns">
+                        <div class="column-title">
+                            <!--TO DO-->
+                            {{column.name}}
+                        </div>
+                        <div class="task-container"
+                            cdkDropList
+                            
+                            [cdkDropListData]="column.tasks"
+                            (cdkDropListDropped)="drop($event)"
+                        >
+                            <div class="task" *ngFor="let item of column.tasks" cdkDrag>
+                                {{item}}
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="board-column" style="background-color:goldenrod;">
+                        <div class="column-title">
+                            IN PROGRESS
+                        </div>
+                        <div class="task-container"
+                            cdkDropList
+                            #todoList="cdkDropList"
+                            [cdkDropListData]="inprogress"
+                            (cdkDropListDropped)="drop($event)"
+                        >
+                            <div class="task" *ngFor="let item of inprogress" cdkDrag>
+                                {{item}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="board-column" style="background-color:lightgreen">
+                        <div class="column-title">
+                            COMPLETED
+                        </div>
+                        <div class="task-container"
+                        cdkDropList
+                        #todoList="cdkDropList"
+                        [cdkDropListData]="completed"
+                        (cdkDropListDropped)="drop($event)"
+                    >
+                        <div class="task" *ngFor="let item of completed" cdkDrag>
+                            {{item}}
+                        </div>
+                    </div>
+                    </div>
+                    <div class="board-column" style="background-color:lavender;">
+                        <div class="column-title">
+                            FOR TESTING
+                        </div>
+                        <div class="task-container"
+                        cdkDropList
+                        #todoList="cdkDropList"
+                        [cdkDropListData]="fortesting"
+                        (cdkDropListDropped)="drop($event)"
+                    >
+                        <div class="task" *ngFor="let item of fortesting" cdkDrag>
+                            {{item}}
+                        </div>
+                    </div>
+                    </div>-->
+            
+                  </div>
+            </div>
+    </div>
+</div>

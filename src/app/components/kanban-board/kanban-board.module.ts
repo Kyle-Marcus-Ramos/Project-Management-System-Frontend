@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { KanbanBoardComponent } from './kanban-board.component';
 import { KanbanBoardRoutes } from './kanban-board.routing';
 import { MaterialModule } from '../../material.module';
@@ -17,4 +16,7 @@ import { MaterialModule } from '../../material.module';
     declarations: []
 })
 
-export class KanbanBoardModule { }
+export class KanbanBoardModule {
+
+ }
+
