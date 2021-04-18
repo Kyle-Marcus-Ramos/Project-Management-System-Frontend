@@ -25,7 +25,7 @@ Our main goal for this project is to increase overall efficiency and to proper v
 
 ### Built With
 
-Major frameworks used in the System. 
+Major frameworks used in the Frontend System. 
 * [Bootstrap]
 * [HTML]
 * [Typescript]
