@@ -1,8 +1,14 @@
-# ProjectManagementSystem
+# Project Management System
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
 
+# Contributors:
+* Ramos, Kyle Marcus E. [11910739]
+* Chuacuco, Dmitri S. [11939850]
+* Dong, Neil Anthony R. [11811781]
+
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 ![Untitled](https://user-images.githubusercontent.com/50777794/115156256-f1221700-a0b5-11eb-9141-801782e7e74b.png)
@@ -15,6 +21,7 @@ Why did we choose to create this system? Here's why:
 * Kanban boards will let teams know where work stands at a glance by displaying the most relevant information for each story, issue, bug, or task.
 * The Kanban Board empowers teams and help streamline processes to identify bottlenecks before they happen, so every project launches on time.
 
+Our main goal for this project is to increase overall efficiency and to proper visualize Project Management Concepts taught to us during course LBYPD2 and SOFDESG.
 
 ### Built With
 
@@ -38,7 +45,7 @@ Major frameworks used in the System.
     ```sh
     https://angular.io/cli
     
-## Clone the repo
+## Clone the repository
 
 ```shell
 git clone https://github.com/Kyle-Marcus-Ramos/Project-Management-System-Frontend.git
