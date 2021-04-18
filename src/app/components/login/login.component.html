@@ -10,9 +10,9 @@
                     <input type="text" name="" placeholder="Enter Username">
                     <p>Password</p>
                     <input type="password" name="" placeholder="Enter Password">
-                    <input type="submit" name="" value="Login">
-                    <a href="../registration/forgotPw.html">Forgot password?</a><br>
-                    <a href="../registration/register.html">Create account here</a>
+                    <input type="submit" name="" value="Login" (click)="goToDashboard">
+                    <a (click)="goToForgotPassword()">Forgot password?</a><br>
+                    <a (click)="goToRegistration()">Create account here</a>
                 </form>
         </div>
         </div>

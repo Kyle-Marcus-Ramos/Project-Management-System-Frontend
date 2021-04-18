@@ -1,4 +1,4 @@
-<div class="wrapper" *ngIf="path !== '/login' && path !== '/'">
+<div class="wrapper" *ngIf="path !== '/login/login' && path !== '/registration/registration' && path !== '/'">
   <div class="sidebar" data-color="white">
     <app-sidebar></app-sidebar>
   </div>
@@ -9,6 +9,6 @@
   </main>
 </div>
 
-<div *ngIf="path === '/login' || path === '/'">
+<div *ngIf="path === '/login/login' || path === '/registration/registration' || path === '/'">
   <router-outlet></router-outlet>
 </div>
