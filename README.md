@@ -14,7 +14,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ![Untitled](https://user-images.githubusercontent.com/50777794/115156256-f1221700-a0b5-11eb-9141-801782e7e74b.png)
 
 
-Kanban is a common framework for agile and DevOps software development that provides transparency of work and team capacity. Kanban boards in Jira Software help teams visualize their workflow, limit work-in-progress, and maximize efficiency.
+Kanban is a common framework for agile and DevOps software development that provides transparency of work and team capacity. Kanban boards help teams visualize their workflow, limit work-in-progress, and maximize efficiency.
 
 Why did we choose to create this system? Here's why: 
 * Our system will allow teams to define and configure workflows and can be as simple or as complex as needed.
