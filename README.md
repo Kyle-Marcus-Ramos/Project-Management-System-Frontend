@@ -1,26 +1,75 @@
-# ProjectManagementSystem
+# Project Management System
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
 
+# Contributors:
+* Ramos, Kyle Marcus E. [11910739]
+* Chuacuco, Dmitri S. [11939850]
+* Dong, Neil Anthony R. [11811781]
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+![Untitled](https://user-images.githubusercontent.com/50777794/115156256-f1221700-a0b5-11eb-9141-801782e7e74b.png)
+
+
+Kanban is a common framework for agile and DevOps software development that provides transparency of work and team capacity. Kanban boards help teams visualize their workflow, limit work-in-progress, and maximize efficiency.
+
+Why did we choose to create this system? Here's why: 
+* Our system will allow teams to define and configure workflows and can be as simple or as complex as needed.
+* Kanban boards will let teams know where work stands at a glance by displaying the most relevant information for each story, issue, bug, or task.
+* The Kanban Board empowers teams and help streamline processes to identify bottlenecks before they happen, so every project launches on time.
+
+Our main goal for this project is to increase overall efficiency and to proper visualize Project Management Concepts taught to us during course LBYPD2 and SOFDESG.
+
+### Built With
+
+Major frameworks used in the Frontend System. 
+* [Bootstrap]
+* [HTML]
+* [Typescript]
+* [CSS]
+
+
+## Prerequisites
+* Install Visual Studio
+  ```sh
+  https://code.visualstudio.com/download  
+  
+* Install Node and NPM
+  ```sh
+  https://nodejs.org/en/  
+  
+* Install Angular CLI
+    ```sh
+    https://angular.io/cli
+    
+## Clone the repository
+
+```shell
+git clone https://github.com/Kyle-Marcus-Ramos/Project-Management-System-Frontend.git
+```
+
+## Install npm packages
+
+After cloning the repository, install the `npm` packages described in the `package.json` and verify that it works:
+
+```shell
+npm install
+```
+
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To run the project:
+ ```shell
+    STEP 1: Open terminal of Visual Studio Code (Ctrl + ~) 
+  ```
+  ```shell
+    STEP 2: Type "ng serve" to run the project in your localhost:4200
+  ```
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
