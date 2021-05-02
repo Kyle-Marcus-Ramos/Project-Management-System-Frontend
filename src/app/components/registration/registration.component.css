@@ -5,12 +5,12 @@
   background-size: cover;
   background-position: center;
   font-family: sans-serif;
-  background-image: none;
+  background-image: url('/assets/images/spiderman.jpg');
 }
 
-.registerbox {
-  width: 520px;
-  height: 600px;
+.row {
+  width: 340px;
+  height: 560px;
   background: #000;
   color: #fff;
   top: 50%;
@@ -31,27 +31,28 @@
 
 }
 
-h1 {
+h2 {
   margin: 0;
   padding: 0 0 20px;
   text-align: center;
   font-size: 22px;
-}
+} 
 
-.registerbox p {
+.row p {
   margin: 0;
   padding: 0;
   font-weight: bold;
 }
 
-.registerbox input {
+.row input {
   width: 100%;
   margin-bottom: 20px;
 }
 
-.registerbox input[type="text"],
-input[type="password"],
-input[type="email"] {
+.row input[type="firstname"],
+input[type="lastname"],
+input[type="email"],
+input[type="password"] {
   border: none;
   border-bottom: 1px solid #fff;
   background: transparent;
@@ -61,7 +62,7 @@ input[type="email"] {
   font-size: 16px;
 }
 
-.registerbox input[type="submit"] {
+.row button {
   border: none;
   outline: none;
   height: 40px;
@@ -70,7 +71,7 @@ input[type="email"] {
   font-size: 18px;
 }
 
-.registerbox input[type="submit"]:hover {
+.row button:hover {
   cursor: pointer;
   background: #ffc;
   color: #000;
