@@ -13,7 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { KanbanBoardComponent } from './components/kanban-board/kanban-board.component';
 import { HomeLayoutComponent } from './components/layout/home-layout/home-layout.component';
 import { ForgetPwComponent } from './components/forget-pw/forget-pw.component';
-import { ResetPwComponent } from './components/calendar/reset-pw/reset-pw.component';
+import { ResetPwComponent } from './components/reset-pw/reset-pw.component';
 
 //Shared 
 import { SidebarModule } from './components/sidebar/sidebar.module';
