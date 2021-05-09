@@ -36,9 +36,9 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
-import {LocalService} from './service/board/local/local.service';
+import { LocalService } from './service/board/local/local.service';
 import { ContextMenuComponent } from './components/common/contextmenu/context-menu.component';
 
 
@@ -63,7 +63,7 @@ FullCalendarModule.registerPlugins([
     ContentEditDirective,
     ContextMenuComponent,
     SummaryComponent,
-    DetailComponent
+    DetailComponent,
     ForgetPwComponent,
     ResetPwComponent,
   ],
@@ -82,7 +82,7 @@ FullCalendarModule.registerPlugins([
     Ng2GoogleChartsModule,
 
   ],
-  providers: [ LocalService ],
+  providers: [LocalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
