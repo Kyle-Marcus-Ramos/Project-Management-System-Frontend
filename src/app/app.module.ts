@@ -12,6 +12,12 @@ import { RoadmapComponent } from './components/roadmap/roadmap.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { KanbanBoardComponent } from './components/kanban-board/kanban-board.component';
 import { HomeLayoutComponent } from './components/layout/home-layout/home-layout.component';
+import { BoardComponent } from './components/board/board/board.component';
+import { ListComponent } from './components/board/list/list.component';
+
+import { ContentEditDirective } from './directives/common/content-edit.directive';
+import { SummaryComponent } from './components/board/card/summary/summary.component';
+import { DetailComponent } from './components/board/card/detail/detail.component';
 
 //Shared 
 import { SidebarModule } from './components/sidebar/sidebar.module';
@@ -29,6 +35,9 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import {LocalService} from './service/board/local/local.service';
+import { ContextMenuComponent } from './components/common/contextmenu/context-menu.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -46,6 +55,12 @@ FullCalendarModule.registerPlugins([
     DashboardComponent,
     KanbanBoardComponent,
     HomeLayoutComponent,
+    BoardComponent,
+    ListComponent,
+    ContentEditDirective,
+    ContextMenuComponent,
+    SummaryComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
@@ -58,9 +73,11 @@ FullCalendarModule.registerPlugins([
     SidebarModule,
     NavbarModule,
     FooterModule,
-    DragDropModule
+    DragDropModule,
+    Ng2GoogleChartsModule,
+
   ],
-  providers: [],
+  providers: [ LocalService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

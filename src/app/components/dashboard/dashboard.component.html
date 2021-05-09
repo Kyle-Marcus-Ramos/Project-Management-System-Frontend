@@ -1,1 +1,12 @@
-<p>Dashboard Page</p>
+<div class="root">
+    <div class="board" >
+        <div class="project-title" *ngFor="let item of Projects">
+                {{item}}
+        </div>
+
+
+    </div>
+    <a class="create-button" href="#">
+        Create new project
+    </a>
+</div>

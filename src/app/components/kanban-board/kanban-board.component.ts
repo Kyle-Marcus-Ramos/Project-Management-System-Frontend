@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { Board } from 'src/app/components/models/board.model';
 import { Column } from 'src/app/components/models/column.model';
+
+
 @Component({
   selector: 'app-kanban-board',
   templateUrl: './kanban-board.component.html',
@@ -9,10 +11,6 @@ import { Column } from 'src/app/components/models/column.model';
 })
 export class KanbanBoardComponent {
   title = 'ProjectManagementSystem';
-
-  constructor(){
-
-  }
 
   board: Board = new Board('Test Board', [
     new Column('TO DO', [
@@ -41,13 +39,11 @@ export class KanbanBoardComponent {
     'yellow',
     'white'
 ];
-getColor(){
-  if (this.board.columns.entries.name  == 'TO DO'){
-    return 'black';
-  }
-  this.board.columns.entries.name 
-  /*return this.board.columns. === "Test Board" ? 'black' : 'red'*/
+
+constructor(){
+
 }
+
 /*
   todo = [
     'Get to work',
@@ -71,15 +67,20 @@ getColor(){
   ]
 */
 ngOnInit() {
+  
 }
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
+
+      
       transferArrayItem(event.previousContainer.data,
                         event.container.data,
                         event.previousIndex,
                         event.currentIndex);
     }
   }
+
 }
