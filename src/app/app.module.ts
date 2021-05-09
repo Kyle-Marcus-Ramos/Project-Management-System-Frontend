@@ -18,6 +18,8 @@ import { ListComponent } from './components/board/list/list.component';
 import { ContentEditDirective } from './directives/common/content-edit.directive';
 import { SummaryComponent } from './components/board/card/summary/summary.component';
 import { DetailComponent } from './components/board/card/detail/detail.component';
+import { ForgetPwComponent } from './components/forget-pw/forget-pw.component';
+import { ResetPwComponent } from './components/reset-pw/reset-pw.component';
 
 //Shared 
 import { SidebarModule } from './components/sidebar/sidebar.module';
@@ -38,6 +40,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import {LocalService} from './service/board/local/local.service';
 import { ContextMenuComponent } from './components/common/contextmenu/context-menu.component';
+
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -61,6 +64,8 @@ FullCalendarModule.registerPlugins([
     ContextMenuComponent,
     SummaryComponent,
     DetailComponent
+    ForgetPwComponent,
+    ResetPwComponent,
   ],
   imports: [
     BrowserModule,
