@@ -43,7 +43,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { PortalModule } from '@angular/cdk/portal';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatDividerModule } from '@angular/material/divider';
-
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -93,7 +94,11 @@ import { MatDividerModule } from '@angular/material/divider';
         MatToolbarModule,
         MatTooltipModule,
         MatNativeDateModule,
-        MatDividerModule
+        MatDividerModule,
+        Ng2GoogleChartsModule,
+        FormsModule,
+        ReactiveFormsModule
+        
     ],
     exports: [
         MatButtonModule,
@@ -102,5 +107,6 @@ import { MatDividerModule } from '@angular/material/divider';
         MatIconModule,
         MatCardModule
     ]
+
 })
 export class MaterialModule { }

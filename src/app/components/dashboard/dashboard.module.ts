@@ -17,4 +17,6 @@ import { MaterialModule } from '../../material.module';
     declarations: []
 })
 
-export class DashboardModule { }
+export class DashboardModule {
+
+ }

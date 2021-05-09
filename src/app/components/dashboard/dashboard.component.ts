@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
   title = 'ProjectManagementSystem';
+  Projects = [
+    'project title[1]',
+    'project title[2]',
+  ];
 }
