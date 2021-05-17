@@ -40,8 +40,20 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { LocalService } from './service/board/local/local.service';
 import { ContextMenuComponent } from './components/common/contextmenu/context-menu.component';
+import { DashboardDialogComponent } from './dashboard-dialog/dashboard-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { KanbanboardDialogComponent } from './kanbanboard-dialog/kanbanboard-dialog.component';
 
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSelectModule} from '@angular/material/select';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatIconModule} from '@angular/material/icon';
+/*
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
+import { FormGroup, FormControl} from '@angular/forms';*/
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
   interactionPlugin,
@@ -66,7 +78,11 @@ FullCalendarModule.registerPlugins([
     DetailComponent,
     ForgetPwComponent,
     ResetPwComponent,
+    DashboardDialogComponent,
+    KanbanboardDialogComponent,
+
   ],
+  entryComponents: [DashboardDialogComponent, KanbanboardDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -80,7 +96,13 @@ FullCalendarModule.registerPlugins([
     FooterModule,
     DragDropModule,
     Ng2GoogleChartsModule,
-
+    MatDialogModule,
+    MatDatepickerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatGridListModule,
+    MatIconModule
   ],
   providers: [LocalService],
   bootstrap: [AppComponent]
