@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forget-pw',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgetPwComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
+
+  goToResetPassword() {
+    this.router.navigate(['/resetpw/resetpw']);
+  }
 
   ngOnInit(): void {
   }ng 

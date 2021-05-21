@@ -40,6 +40,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import {LocalService} from './service/board/local/local.service';
 import { ContextMenuComponent } from './components/common/contextmenu/context-menu.component';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 FullCalendarModule.registerPlugins([
@@ -63,7 +64,7 @@ FullCalendarModule.registerPlugins([
     ContentEditDirective,
     ContextMenuComponent,
     SummaryComponent,
-    DetailComponent
+    DetailComponent,
     ForgetPwComponent,
     ResetPwComponent,
   ],
@@ -80,6 +81,7 @@ FullCalendarModule.registerPlugins([
     FooterModule,
     DragDropModule,
     Ng2GoogleChartsModule,
+    NgbModule,
 
   ],
   providers: [ LocalService ],

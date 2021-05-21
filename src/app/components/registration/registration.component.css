@@ -1,10 +1,4 @@
 ::ng-deep body {
-  margin: 0;
-  padding: 0;
-  background-color: #bdc1c5 !important;
-  background-size: cover;
-  background-position: center;
-  font-family: sans-serif;
   background-image: url('/assets/images/spiderman.jpg');
 }
 
