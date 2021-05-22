@@ -8,9 +8,9 @@
                 <input type="text" name="" placeholder="Enter Email">
                 <p>Username</p>
                 <input type="text" name="" placeholder="Enter Username">
-                <input type="submit" name="" value="Submit">
+                <input type="submit" name="" value="Submit" (click)="goToResetPassword()">
                 <a href="../login/login">Already have an account?</a><br>
-                <a href="resetPw.html">Reset Password</a><br>
+                <a (click)="goToResetPassword()">Reset Password</a>
             </form>
     </div>
 
