@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { GoogleChartInterface } from 'ng2-google-charts';
+import { GoogleChartInterface  } from 'ng2-google-charts';
+/*import { Session } from 'node:inspector';*/
+import {data} from './data'
 
 @Component({
   selector: 'app-roadmap',

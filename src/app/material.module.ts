@@ -45,7 +45,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatDividerModule } from '@angular/material/divider';
 import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
-
+import { FormGroup, FormControl} from '@angular/forms';
 @NgModule({
     imports: [
         A11yModule,
@@ -82,7 +82,7 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
         MatProgressSpinnerModule,
         MatRadioModule,
         MatSelectModule,
-        MatDatepickerModule,
+
         MatButtonModule,
         MatSidenavModule,
         MatSliderModule,
@@ -96,16 +96,21 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
         MatNativeDateModule,
         MatDividerModule,
         Ng2GoogleChartsModule,
-        FormsModule,
-        ReactiveFormsModule
         
+        /*
+        FormsModule,
+        ReactiveFormsModule,
+        MatDatepickerModule,
+        FormGroup,
+        FormControl*/
     ],
     exports: [
         MatButtonModule,
         MatMenuModule,
         MatToolbarModule,
         MatIconModule,
-        MatCardModule
+        MatCardModule,
+        
     ]
 
 })

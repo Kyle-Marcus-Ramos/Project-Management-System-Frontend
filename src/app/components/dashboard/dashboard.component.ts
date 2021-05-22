@@ -1,3 +1,6 @@
+import { Component } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DashboardDialogComponent } from 'src/app/dashboard-dialog/dashboard-dialog.component';
 import { Component, Input } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -16,6 +19,11 @@ export class DashboardComponent {
     'project title[1]',
     'project title[2]',
   ];
+  constructor(public dialog: MatDialog){}
+  openDialog() {
+    this.dialog.open(DashboardDialogComponent);
+
+    //dialogRef.afterClosed().subscribe(result )
 
   open() {
     const modalRef = this.modalService.open(NgbdModalContent);

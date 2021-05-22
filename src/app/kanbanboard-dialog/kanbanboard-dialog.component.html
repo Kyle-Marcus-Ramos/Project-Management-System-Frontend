@@ -1,0 +1,127 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<h1 style="margin-left: 15px;">Project Title</h1>
+
+  <mat-grid-list cols="3" rowHeight="400px" >
+    <mat-grid-tile  colspan="2">
+      <div class="container"style="align-items: left;">
+      <h3 style="margin-top: 50px;">Description</h3>
+      <mat-form-field style="min-width: 350px;"appearance="fill">
+        <mat-label></mat-label>
+        <textarea 
+        cdkTextareaAutosize
+          cdkAutosizeMinRows="5"
+          matInput></textarea>
+      </mat-form-field>
+
+      <mat-dialog-actions >
+        <button class="button" mat-button mat-dialog-close>Save</button>
+        <button class="button" mat-button mat-dialog-close>Cancel</button>
+      </mat-dialog-actions>
+
+      <h3 style="margin-top: 30px;">Comments:</h3>
+      
+      <mat-icon style="transform:scale(2.5)">account_circle</mat-icon>
+    
+      <mat-form-field style="margin-left: 25px;min-width: 300px;" appearance="fill">
+        
+        <textarea 
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="2"
+          matInput placeholder="Add a comment... "></textarea>
+      </mat-form-field>
+
+      </div>
+    </mat-grid-tile>
+  
+    <mat-grid-tile style="margin-left:-30px; "colspan="1" >
+    <div class="container"  style="align-items: left;">
+      <h3>Assignee:</h3>
+      <h3>Reporter:</h3>
+      <h3>Priority:</h3>
+      <h3>Estimate:</h3>
+      <h3>Due Date:</h3>
+
+      <h5 style="margin-top:100px;text-align: right;">Created:</h5>
+      <h5 style="text-align: right;">Updated:</h5>
+    </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+<!--
+
+  <h3 style="margin-top: 50px; font-size: 12px;">Description</h3>
+  
+  <p>
+      <mat-form-field style="min-width: 350px;"appearance="fill">
+        <mat-label></mat-label>
+        <textarea 
+        cdkTextareaAutosize
+          cdkAutosizeMinRows="5"
+          matInput></textarea>
+        
+      </mat-form-field>
+  </p>
+  <p>
+  
+    <mat-dialog-actions >
+      <button class="button" mat-button mat-dialog-close>Save</button>
+    
+      <button class="button" mat-button mat-dialog-close>Cancel</button>
+    </mat-dialog-actions>
+  </p>
+  <h3 style="margin-top: 30px;">Comments:</h3>
+  <p>
+      <mat-form-field style="min-width: 350px;" appearance="fill">
+        
+        <textarea 
+        
+        
+        cdkTextareaAutosize
+          cdkAutosizeMinRows="2"
+          matInput placeholder="Add a comment... "></textarea>
+        
+      </mat-form-field>
+  </p>
+-->
+
+  <!--
+  <mat-form-field appearance="fill">
+      <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>-->
+
+
+
+    <!--
+  <p>
+    <mat-form-field hintLabel="Priority" appearance="fill">
+      <mat-select>
+        <mat-option value="one">Low</mat-option>
+        <mat-option value="two">Standard</mat-option>
+        <mat-option value="three">High</mat-option>
+      </mat-select>
+      
+
+  </mat-form-field>
+    <mat-form-field hintLabel="Enter a date range"appearance="fill">
+      <mat-label></mat-label>
+      <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+        <input matStartDate formControlName="start" placeholder="Start date">
+        <input matEndDate formControlName="end" placeholder="End date">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    
+      <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+      <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+    </mat-form-field>
+  </p>
+  -->
+    <!--
+    <p>Selected range: {{range.value | json}}</p>
+  -->
+
+
+
+  

@@ -33,16 +33,36 @@
     margin-right:2vw;
     margin-top: 2vh;
 }
-.create-button{
+.button{
+    
     display:relative;
     color:white;
     text-align: center;
     width:200px;
-    height:50px;
+    /*
+    height:50px;*/
     background-color: green;
     padding:15px 12px;
     margin-top:1vh;
     margin-left: 42%;
     border-radius: 4px;
     border: 1px;
+
+/*
+display:relative;
+
+width:200px;
+height:50px;
+margin-top:1vh;
+margin-left: 42%;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;*/
 }
