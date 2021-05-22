@@ -1,7 +1,7 @@
-import {Component, ElementRef, Input, OnInit, Output, EventEmitter, Inject} from '@angular/core';
-import {DOCUMENT} from '@angular/common';
-import {ListInterface, List} from '../../../model/list/list.model';
-import {Card, CardInterface} from '../../../model/card/card.model';
+import { Component, ElementRef, Input, OnInit, Output, EventEmitter, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { ListInterface, List } from '../../../model/list/list.model';
+import { Card, CardInterface } from '../../../model/card/card.model';
 import { MovementIntf, Movement } from 'src/app/model/card/movement';
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { KanbanboardDialogComponent } from 'src/app/kanbanboard-dialog/kanbanboard-dialog.component';
@@ -44,6 +44,7 @@ export class ListComponent implements OnInit {
     width: '700px'} );
   }
 
+
   ngOnInit() {
 
   }
@@ -61,33 +62,33 @@ export class ListComponent implements OnInit {
     dragEvent.preventDefault();
   }
 
-  delete(){
+  delete() {
     this.deleteList.emit(this.listIndex);
-  
+
   }
 
 
   dropCard(dragEvent: DragEvent) {
     const data = JSON.parse(dragEvent.dataTransfer.getData('text'));
     const elements: Element[] = this.document.elementsFromPoint(dragEvent.x, dragEvent.y);
-    const cardElementBeingDroppedOn = elements.find( x => x.tagName.toLowerCase() === 'app-card-summary');
-    const listElementBeingDroppedOn = elements.find( x => x.tagName.toLowerCase() === 'app-list');
+    const cardElementBeingDroppedOn = elements.find(x => x.tagName.toLowerCase() === 'app-card-summary');
+    const listElementBeingDroppedOn = elements.find(x => x.tagName.toLowerCase() === 'app-list');
     const listIndexDroppedOn = parseInt(listElementBeingDroppedOn.getAttribute('listIndex'), 10);
-    const cardIndexDroppedOn  = cardElementBeingDroppedOn === undefined ? undefined :
-          parseInt(cardElementBeingDroppedOn.getAttribute('cardIndex'), 10);
+    const cardIndexDroppedOn = cardElementBeingDroppedOn === undefined ? undefined :
+      parseInt(cardElementBeingDroppedOn.getAttribute('cardIndex'), 10);
     const listIndexDragged = parseInt(data.listIndex, 10);
     const cardIndexDragged = parseInt(data.cardIndex, 10);
 
     if (listIndexDragged === listIndexDroppedOn) {
-        // same list just re-organize the cards
-        const cardDragged = this.list.cards.splice(cardIndexDragged,1);
-        this.list.cards.splice(cardIndexDroppedOn , 0 , ...cardDragged);
+      // same list just re-organize the cards
+      const cardDragged = this.list.cards.splice(cardIndexDragged, 1);
+      this.list.cards.splice(cardIndexDroppedOn, 0, ...cardDragged);
     } else {
-      this.moveCardAcrossList.emit(new Movement(listIndexDragged, listIndexDroppedOn , cardIndexDragged , cardIndexDroppedOn));
+      this.moveCardAcrossList.emit(new Movement(listIndexDragged, listIndexDroppedOn, cardIndexDragged, cardIndexDroppedOn));
     }
 
   }
 
 
-  
+
 }
