@@ -47,7 +47,7 @@ import { ContextMenuComponent } from './components/common/contextmenu/context-me
 import { DashboardDialogComponent } from './dashboard-dialog/dashboard-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { KanbanboardDialogComponent } from './kanbanboard-dialog/kanbanboard-dialog.component';
-import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { A11yModule } from '@angular/cdk/a11y';
 import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
@@ -62,7 +62,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatStepperModule } from '@angular/material/stepper';
@@ -73,7 +72,6 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
@@ -91,17 +89,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { PortalModule } from '@angular/cdk/portal';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatGridListModule } from '@angular/material/grid-list';
 
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatSelectModule} from '@angular/material/select';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatIconModule} from '@angular/material/icon';
-/*
-import { FormsModule , ReactiveFormsModule} from '@angular/forms';
-
-import { FormGroup, FormControl} from '@angular/forms';*/
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
   interactionPlugin,
@@ -145,13 +134,11 @@ FullCalendarModule.registerPlugins([
     FooterModule,
     DragDropModule,
     Ng2GoogleChartsModule,
-    MatDialogModule,
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
     MatGridListModule,
-    MatIconModule
     A11yModule,
     ClipboardModule,
     CdkStepperModule,
@@ -177,7 +164,6 @@ FullCalendarModule.registerPlugins([
     PortalModule,
     ScrollingModule,
     MatExpansionModule,
-    MatGridListModule,
     MatIconModule,
     MatListModule,
     MatMenuModule,
@@ -185,7 +171,6 @@ FullCalendarModule.registerPlugins([
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatRadioModule,
-    MatSelectModule,
     MatDatepickerModule,
     MatButtonModule,
     MatSidenavModule,
@@ -201,7 +186,7 @@ FullCalendarModule.registerPlugins([
     MatDividerModule,
     Ng2GoogleChartsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
     NgbModule,
 
   ],

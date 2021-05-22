@@ -1,13 +1,12 @@
 <div class="root">
-    <div class="board" >
-        <div class="project-title" *ngFor="let item of Projects">
-                {{item}}
-        </div>
-
-
+  <div class="board">
+    <div class="project-title" *ngFor="let item of Projects">
+      {{item}}
     </div>
 
-        <button class="button" mat-raised-button (click)="openDialog()">Create New Project</button>
 
+  </div>
+
+  <button class="button" mat-raised-button (click)="openDialog()">Create New Project</button>
 
 </div>

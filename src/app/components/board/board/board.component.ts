@@ -1,14 +1,12 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { List, ListInterface } from '../../../model/list/list.model';
 import { MovementIntf } from 'src/app/model/card/movement';
-import {BoardService} from '../../../service/board/board-service';
-import {BoardModel} from '../../../model/board/board.model';
-import {LocalService} from '../../../service/board/local/local.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { KanbanboardDialogComponent } from 'src/app/kanbanboard-dialog/kanbanboard-dialog.component';
 import { BoardService } from '../../../service/board/board-service';
 import { BoardModel } from '../../../model/board/board.model';
 import { LocalService } from '../../../service/board/local/local.service';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { KanbanboardDialogComponent } from 'src/app/kanbanboard-dialog/kanbanboard-dialog.component';
+
 
 
 
@@ -21,16 +19,15 @@ export class BoardComponent implements OnInit {
 
   lists: ListInterface[];
 
-  constructor(private localService: LocalService) { }
+  constructor(private localService: LocalService, public dialog: MatDialog) { }
 
-  ngOnInit() {
 
-    
-    openDialog() {
-      this.dialog.open(KanbanboardDialogComponent, {
-    
-      });
-    }
+
+  openDialog() {
+    this.dialog.open(KanbanboardDialogComponent, {
+
+    });
+  }
 
   ngOnInit() {
     const board = this.localService.getBoard();
@@ -39,8 +36,8 @@ export class BoardComponent implements OnInit {
 
     console.log(this.lists);
     // ideally retrive and initialize from some storage.
-    if (this.lists === undefined){
-      
+    if (this.lists === undefined) {
+
       const newList1: ListInterface = new List();
       newList1.position = 0 + 1;
 
@@ -51,7 +48,7 @@ export class BoardComponent implements OnInit {
       if (this.lists === undefined) {
         this.lists = [];
       }
-      
+
       this.lists.push(newList1);
       const newList2: ListInterface = new List();
       newList2.position = this.lists.length + 1;
@@ -79,7 +76,6 @@ export class BoardComponent implements OnInit {
     }
   }
 
-  constructor(private localService: LocalService,public dialog:MatDialog) {}
 
 
 
