@@ -76,7 +76,7 @@ export class SidebarComponent implements OnInit {
         this.router.navigate(['/dashboard/dashboard']);
     }
     goToKanbanBoard() {
-        this.router.navigate(['/kanban-board/kanban-board']);
+        this.router.navigate(['/board/board']);
     }
     goToCalendar() {
         this.router.navigate(['/calendar/calendar']);
@@ -84,7 +84,9 @@ export class SidebarComponent implements OnInit {
     goToRoadmap() {
         this.router.navigate(['/roadmap/roadmap']);
     }
-
+    goToAdmin() {
+        this.router.navigate(['/admin/admin']);
+    }
 
 
     setPageTitle(page: string) {

@@ -11,6 +11,7 @@ import { ForgetPwModule } from './components/forget-pw/forget-pw.module';
 import { ResetPwModule } from './components/reset-pw/reset-pw.module';
 import { RoadmapModule } from './components/roadmap/roadmap.module';
 import { BoardModule } from './components/board/board/board.module';
+import { AdminModule } from './components/admin/admin.module';
 
 const routes: Routes = [
   {
@@ -54,6 +55,10 @@ const routes: Routes = [
   {
     path: 'board',
     loadChildren: () => BoardModule
+  },
+  {
+    path: 'admin',
+    loadChildren: () => AdminModule
   },
 
   { path: '**', redirectTo: '' }
