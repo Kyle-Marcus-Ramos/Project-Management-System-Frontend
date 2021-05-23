@@ -3,7 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { ListInterface, List } from '../../../model/list/list.model';
 import { Card, CardInterface } from '../../../model/card/card.model';
 import { MovementIntf, Movement } from 'src/app/model/card/movement';
-import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+// import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { KanbanboardDialogComponent } from 'src/app/kanbanboard-dialog/kanbanboard-dialog.component';
 
 @Component({
@@ -31,17 +31,17 @@ export class ListComponent implements OnInit {
 
 
   /*TEST*/
-  constructor(private elementRef: ElementRef , @Inject(DOCUMENT) private document: Document, public dialog:MatDialog) { 
+  constructor(private elementRef: ElementRef, @Inject(DOCUMENT) private document: Document) {
 
-    }
+  }
   openDialog() {
-      
-/*
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true; */
-    const dialogRef = this.dialog.open(KanbanboardDialogComponent, { 
-    width: '700px'} );
+
+    /*
+        const dialogConfig = new MatDialogConfig();
+        dialogConfig.disableClose = true;
+        dialogConfig.autoFocus = true; */
+    // const dialogRef = this.dialog.open(KanbanboardDialogComponent, { 
+    // width: '700px'} );
   }
 
 
@@ -50,7 +50,7 @@ export class ListComponent implements OnInit {
   }
 
   addNewCard() {
-    
+
     const card = new Card(this.cardCount++ + '', 'header' + this.cardCount, 'summary' + this.cardCount, 'sample desc');
     this.list.cards.push(card);
     this.newCardAdded.emit(card);

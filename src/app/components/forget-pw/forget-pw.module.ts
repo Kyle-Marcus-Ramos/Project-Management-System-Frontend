@@ -5,14 +5,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ForgetPwComponent } from './forget-pw.component';
 import { ForgetPwRoutes } from './forget-pw.routing';
-import { MaterialModule } from '../../material.module';
+// import { MaterialModule } from '../../material.module';
 
 @NgModule({
     imports: [
         RouterModule.forChild(ForgetPwRoutes),
         CommonModule,
         FormsModule,
-        MaterialModule
+        // MaterialModule
     ],
     declarations: []
 })

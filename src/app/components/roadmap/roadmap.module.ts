@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RoadmapComponent } from './roadmap.component';
 import { RoadmapRoutes } from './roadmap.routing';
-import { MaterialModule } from '../../material.module';
+// import { MaterialModule } from '../../material.module';
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { MaterialModule } from '../../material.module';
         RouterModule.forChild(RoadmapRoutes),
         CommonModule,
         FormsModule,
-        MaterialModule,
+        // MaterialModule,
     ],
     declarations: []
 })

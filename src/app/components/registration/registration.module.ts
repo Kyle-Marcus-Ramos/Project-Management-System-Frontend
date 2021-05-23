@@ -5,14 +5,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RegistrationComponent } from './registration.component';
 import { RegistrationRoutes } from './registration.routing';
-import { MaterialModule } from '../../material.module';
+// import { MaterialModule } from '../../material.module';
 
 @NgModule({
     imports: [
         RouterModule.forChild(RegistrationRoutes),
         CommonModule,
         FormsModule,
-        MaterialModule
+        // MaterialModule
     ],
     declarations: []
 })

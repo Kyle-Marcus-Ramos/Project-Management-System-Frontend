@@ -5,14 +5,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CalendarComponent } from './calendar.component';
 import { CalendarRoutes } from './calendar.routing';
-import { MaterialModule } from '../../material.module';
+// import { MaterialModule } from '../../material.module';
 
 @NgModule({
     imports: [
         RouterModule.forChild(CalendarRoutes),
         CommonModule,
         FormsModule,
-        MaterialModule
+        // MaterialModule
     ],
     declarations: []
 })

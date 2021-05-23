@@ -1,9 +1,9 @@
 import { DatePipe } from '@angular/common';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+// import { MatDialog } from '@angular/material/dialog';
+// import { MatPaginator, PageEvent } from '@angular/material/paginator';
+// import { MatSort } from '@angular/material/sort';
+// import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 
 export interface PeriodicElement {
@@ -37,7 +37,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class AdminComponent implements OnInit, AfterViewInit {
   show = true;
   displayedColumns: string[] = ['tm', 'employeeId', 'employeeName', 'numberOfTrips', 'date', 'role', 'status'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  // dataSource = new MatTableDataSource(ELEMENT_DATA);
   pipe: DatePipe;
   filtered: boolean;
 
@@ -47,7 +47,7 @@ export class AdminComponent implements OnInit, AfterViewInit {
   manualPage = null;
 
   // MatPaginator Output
-  pageEvent: PageEvent;
+  // pageEvent: PageEvent;
 
   setPageSizeOptions(setPageSizeOptionsInput: string) {
     this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
@@ -55,43 +55,43 @@ export class AdminComponent implements OnInit, AfterViewInit {
 
   public updateManualPage(index: number): void {
     this.manualPage = index;
-    this.pageEvent.pageIndex = index;
+    // this.pageEvent.pageIndex = index;
   }
   public clearManualPage(): void {
     this.manualPage = 0;
   }
   public title: string;
-  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  // @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  // @ViewChild(MatSort) sort: MatSort;
 
   // get filterStatus() { return this.filterForm.get('filterStatus').value; }
 
-  constructor(public dialog: MatDialog, private router: Router) {
+  constructor(private router: Router) {
     this.filtered = false;
     this.pipe = new DatePipe('en');
     this.title = 'Trip Monitoring';
   }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
+    // this.dataSource.paginator = this.paginator;
   }
 
   ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
+    // this.dataSource.sort = this.sort;
   }
 
   applySearchFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+    // const filterValue = (event.target as HTMLInputElement).value;
+    // this.dataSource.filter = filterValue.trim().toLowerCase();
+    // if (this.dataSource.paginator) {
+    //   this.dataSource.paginator.firstPage();
+    // }
   }
 
   search() {
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+    // if (this.dataSource.paginator) {
+    //   this.dataSource.paginator.firstPage();
+    // }
   }
 
 

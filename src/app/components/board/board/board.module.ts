@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //import { BoardComponent } from './board.component';
 
 import { BoardRoutes } from './board.routing';
-import { MaterialModule } from '../../../material.module';
+// import { MaterialModule } from '../../../material.module';
 
 
 @NgModule({
@@ -13,11 +13,11 @@ import { MaterialModule } from '../../../material.module';
         RouterModule.forChild(BoardRoutes),
         CommonModule,
         FormsModule,
-        MaterialModule
+        // MaterialModule
     ],
     declarations: []
 })
 
-export class BoardModule{
+export class BoardModule {
 
 }

@@ -4,7 +4,7 @@ import { MovementIntf } from 'src/app/model/card/movement';
 import { BoardService } from '../../../service/board/board-service';
 import { BoardModel } from '../../../model/board/board.model';
 import { LocalService } from '../../../service/board/local/local.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+// import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { KanbanboardDialogComponent } from 'src/app/kanbanboard-dialog/kanbanboard-dialog.component';
 
 
@@ -19,14 +19,14 @@ export class BoardComponent implements OnInit {
 
   lists: ListInterface[];
 
-  constructor(private localService: LocalService, public dialog: MatDialog) { }
+  constructor(private localService: LocalService) { }
 
 
 
   openDialog() {
-    this.dialog.open(KanbanboardDialogComponent, {
+    // this.dialog.open(KanbanboardDialogComponent, {
 
-    });
+    // });
   }
 
   ngOnInit() {
