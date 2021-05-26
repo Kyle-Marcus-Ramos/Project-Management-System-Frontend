@@ -1,0 +1,87 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.main-content::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+/* Hide scrollbar for IE, Edge and Firefox */
+.main-content {
+    -ms-overflow-style: none !important;  
+    scrollbar-width: none !important;  
+}
+
+.header-title{
+    margin-left: 2.8% !important;
+    font-weight: bold !important;
+    color:#011343 !important;
+}
+
+.header-item{
+    margin-left: 1.8% !important;
+    margin-top: -1% !important;
+    margin-bottom: -1% !important;
+    font-family: 'OpenSans-Bold' !important;
+}
+
+.lightblue{
+    color: rgb(36,208,229) !important;
+}
+
+.lightgray{
+    color: grey !important;
+}
+
+.white{
+    color: white !important;
+}
+
+.show{
+    margin-top:3% !important; 
+}
+.sidebar .nav i{
+    line-height: 25px !important;
+}
+
+.clear-button{   
+    position: relative !important;
+    font-size: 20px !important;
+    width: 20% !important; 
+    height: 50px !important;
+    margin-left: 30% !important;
+    margin-right: 2% !important;
+    margin-top:1% !important;
+    margin-bottom:3% !important;
+    background-color: rgb(17,146,167) !important;   
+    // opacity: 20% !important;
+ }
+ 
+ .apply-button{
+    font-size: 20px !important;
+    height: 50px !important;
+    width: 20% !important;
+    background-color: rgb(17,146,167) !important;   
+ }
+
+ .fc-add {
+    border: 1px solid black !important;
+    box-shadow: none !important;
+    padding: 15px !important;
+    border-radius: 3px !important;
+    height: 52px !important;
+    width: 450px !important;
+    font-size: 13pt !important;
+    color: black !important;
+    background-color: white !important;
+}
+
+.btn-container{
+    margin-top: -2% !important;
+    margin-bottom: 1% !important;
+}
+.cursor-pointer{
+    cursor: pointer !important; 
+}
+
+
+  
+
+  

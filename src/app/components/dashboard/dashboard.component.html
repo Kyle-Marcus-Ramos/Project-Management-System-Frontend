@@ -1,12 +1,11 @@
 <div class="root">
-  <div class="board">
-    <div class="project-title" *ngFor="let item of Projects">
-      {{item}}
+  <div class="board" style="max-width:inherit;width:auto; height:100%;">
+    <div class="project-title" *ngFor="let item of Projects" (click)="routeToKanbanBoard(item.name)">
+      {{item.name}}
     </div>
-
-
   </div>
 
-  <button class="button" mat-raised-button (click)="openDialog()">Create New Project</button>
+  <button class="button" mat-raised-button (click)="openDialog()" style="margin-bottom: 2.5vh">Create New
+    Project</button>
 
 </div>

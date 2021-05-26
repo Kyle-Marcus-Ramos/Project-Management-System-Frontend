@@ -1,10 +1,11 @@
 ::ng-deep body {
   background-image: url('/assets/images/spiderman.jpg');
+
 }
 
-.row {
-  width: 340px;
-  height: 560px;
+.passwordbox {
+  width: 370px;
+  height: 520px;
   background: #000;
   color: #fff;
   top: 50%;
@@ -25,28 +26,26 @@
 
 }
 
-h2 {
+h1 {
   margin: 0;
   padding: 0 0 20px;
   text-align: center;
   font-size: 22px;
 }
 
-.row p {
+.passwordbox p {
   margin: 0;
   padding: 0;
   font-weight: bold;
 }
 
-.row input {
+.passwordbox input {
   width: 100%;
   margin-bottom: 20px;
 }
 
-.row input[type="firstname"],
-input[type="lastname"],
-input[type="email"],
-input[type="password"] {
+.passwordbox input[type="email"],
+input[type="username"] {
   border: none;
   border-bottom: 1px solid #fff;
   background: transparent;
@@ -56,7 +55,7 @@ input[type="password"] {
   font-size: 16px;
 }
 
-.row button {
+.passwordbox input[type="submit"] {
   border: none;
   outline: none;
   height: 40px;
@@ -65,19 +64,19 @@ input[type="password"] {
   font-size: 18px;
 }
 
-.row button:hover {
+.passwordbox input[type="submit"]:hover {
   cursor: pointer;
   background: #ffc;
   color: #000;
 }
 
-.registerbox a {
+.passwordbox a {
   text-decoration: none;
   font-size: 12px;
   line-height: 20px;
   color: darkgray;
 }
 
-.registerbox a:hover {
+.passwordbox a:hover {
   color: #ffc107;
 }

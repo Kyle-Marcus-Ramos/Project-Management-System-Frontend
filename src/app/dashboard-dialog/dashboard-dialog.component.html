@@ -1,27 +1,24 @@
-    <h2 mat-dialog-title>Project Information</h2>
-        <h3 style="margin-top:30px;">Project Title</h3>
-        <mat-form-field appearance="fill">
-            <input matInput>
+    <h4 mat-dialog-title style="font-weight: bold;">Project Information</h4>
+    <h4 style="margin-top:15px;">Project Title</h4>
+    <mat-form-field appearance="fill">
+      <input matInput [(ngModel)]="card.name" style="background: white;">
 
-        </mat-form-field>
+    </mat-form-field>
 
-        <form [formGroup]="productForm">   
-               <h3 style="margin-top:30px;">Invite members</h3>
-               <div formArrayName="collaborator">
-                 <div *ngFor="let item of collaborator.controls; let pointIndex=index" [formGroupName]="pointIndex">
-     
-                 <mat-form-field appearance="fill">
-                   <input matInput formControlName="point"/>
+    <form [formGroup]="productForm">
+      <h4 style="margin-top:15px;">Invite members</h4>
+      <div formArrayName="collaborator">
+        <div *ngFor="let item of collaborator.controls; let pointIndex=index" [formGroupName]="pointIndex">
 
-                 </mat-form-field>
-                 <button style="margin-left: 10px;" type="button" (click)="deleteCollaborator(pointIndex)">Delete</button>
-                 </div>
-                 <button style="margin-left: 210px;" type="button" (click)="addCollaborator()">Add</button>
-               </div>
-        </form>
-        <mat-dialog-actions >
-            <button class="button" mat-button mat-dialog-close>Send</button>
-        </mat-dialog-actions>
-    
+          <mat-form-field appearance="fill">
+            <input matInput formControlName="email" style="background: white;" />
 
-
+          </mat-form-field>
+          <button type="button" (click)="deleteCollaborator(pointIndex)">Delete</button>
+        </div>
+        <button style="margin-left: 205px;" type="button" (click)="addCollaborator()">Add</button>
+      </div>
+    </form>
+    <mat-dialog-actions>
+      <button class="button" mat-button mat-dialog-close (click)="save()">Send</button>
+    </mat-dialog-actions>

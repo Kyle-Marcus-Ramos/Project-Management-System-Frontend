@@ -6,6 +6,8 @@ import { BoardModel } from '../../../model/board/board.model';
 import { LocalService } from '../../../service/board/local/local.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { KanbanboardDialogComponent } from 'src/app/kanbanboard-dialog/kanbanboard-dialog.component';
+import { CardService } from 'src/app/service/api/card.service';
+import { SaveKanbanRequestDTO } from 'src/app/model/api/kanban';
 
 
 
@@ -14,12 +16,18 @@ import { KanbanboardDialogComponent } from 'src/app/kanbanboard-dialog/kanbanboa
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css'],
+  providers: [CardService],
 })
 export class BoardComponent implements OnInit {
+  public card: SaveKanbanRequestDTO;
 
   lists: ListInterface[];
 
-  constructor(private localService: LocalService, public dialog: MatDialog) { }
+  constructor(private localService:
+    LocalService, public dialog: MatDialog,
+    private _cardService: CardService,
+
+  ) { }
 
 
 
@@ -31,18 +39,33 @@ export class BoardComponent implements OnInit {
 
   ngOnInit() {
     const board = this.localService.getBoard();
+    this.card = new SaveKanbanRequestDTO();
+
+    this.card.projectId = JSON.parse(sessionStorage.getItem("projectId"));
+    console.log(this.card);
+
+    // Hardcoded for Demonstration Purposes only
+    // this.card.projectId = 11;
+
+    this._cardService.GetCards(this.card).subscribe((res) => {
+      console.log("RESPONSE FOR BOARD COMPONENT: ")
+      console.log(res);
+      // if (res !== null) {
+      //   this.lists = res;
+      // }
+    })
 
     this.lists = board.lists;
 
-    console.log(this.lists);
     // ideally retrive and initialize from some storage.
     if (this.lists === undefined) {
 
       const newList1: ListInterface = new List();
+      // newList1.position = 0;
       newList1.position = 0 + 1;
 
       newList1.name = `TO DO`;
-      console.log("To do supposedly" + newList1.name);
+      // console.log("To do supposedly" + newList1.name);
 
 
       if (this.lists === undefined) {
@@ -51,7 +74,9 @@ export class BoardComponent implements OnInit {
 
       this.lists.push(newList1);
       const newList2: ListInterface = new List();
+      // newList2.position = 1;
       newList2.position = this.lists.length + 1;
+
       newList2.name = `IN PROGRESS`;
       if (this.lists == undefined) {
         this.lists = [];
@@ -59,7 +84,9 @@ export class BoardComponent implements OnInit {
       this.lists.push(newList2);
 
       const newList3: ListInterface = new List();
-      newList3.position = this.lists.length + 1;
+      // newList3.position = 2;
+      newList2.position = this.lists.length + 1;
+
       newList3.name = `COMPLETED`;
       if (this.lists === undefined) {
         this.lists = [];
@@ -67,7 +94,9 @@ export class BoardComponent implements OnInit {
       this.lists.push(newList3);
 
       const newList4: ListInterface = new List();
-      newList4.position = this.lists.length + 1;
+      // newList4.position = 3;
+      newList2.position = this.lists.length + 1;
+
       newList4.name = `FOR TESTING`;
       if (this.lists === undefined) {
         this.lists = [];
@@ -82,6 +111,11 @@ export class BoardComponent implements OnInit {
   moveCardAcrossList(movementInformation: MovementIntf) {
     const cardMoved = this.lists[movementInformation.fromListIdx].cards.splice(movementInformation.fromCardIdx, 1);
     this.lists[movementInformation.toListIdx].cards.splice(movementInformation.toCardIdx, 0, ...cardMoved);
+
+
+
+
+
   }
 
   saveBoard() {

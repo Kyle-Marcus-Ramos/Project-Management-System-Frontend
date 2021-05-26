@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Card} from '../../../../model/card/card.model';
+import { Component, Input, OnInit } from '@angular/core';
+import { Card } from '../../../../model/card/card.model';
 
 @Component({
   selector: 'app-card-summary',
@@ -8,7 +8,7 @@ import {Card} from '../../../../model/card/card.model';
 })
 export class SummaryComponent implements OnInit {
 
-   @Input() card: Card;
+  @Input() card: Card;
   @Input() listIndex: number;
   @Input() cardIndex: number;
 
@@ -16,21 +16,21 @@ export class SummaryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
   identifyCardBeingDragged(dragEvent: DragEvent) {
     dragEvent.dataTransfer.effectAllowed = 'move'
-    dragEvent.dataTransfer.dropEffect= 'move'
+    dragEvent.dataTransfer.dropEffect = 'move'
     const transferObject = {
-      'listIndex' : this.listIndex,
-      'cardIndex' : this.cardIndex
+      'listIndex': this.listIndex,
+      'cardIndex': this.cardIndex
     };
-    dragEvent.dataTransfer.setData( 'text', JSON.stringify(transferObject));
+    dragEvent.dataTransfer.setData('text', JSON.stringify(transferObject));
   }
 
   allowCardDragToBeDropped(dragEvent: DragEvent) {
-    dragEvent.dataTransfer.dropEffect= 'move'
+    dragEvent.dataTransfer.dropEffect = 'move'
     dragEvent.preventDefault();
   }
 }

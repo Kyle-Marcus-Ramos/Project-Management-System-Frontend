@@ -1,10 +1,11 @@
 import { DatePipe } from '@angular/common';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, resolveForwardRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/service/api/admin.service';
 
 export interface PeriodicElement {
   tm: number;
@@ -32,11 +33,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  styleUrls: ['./admin.component.css'],
+  providers: [AdminService],
+
 })
 export class AdminComponent implements OnInit, AfterViewInit {
   show = true;
-  displayedColumns: string[] = ['tm', 'employeeId', 'employeeName', 'numberOfTrips', 'date', 'role', 'status'];
+  displayedColumns: string[] = ['tm', 'employeeId', 'employeeName', 'status'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   pipe: DatePipe;
   filtered: boolean;
@@ -66,7 +69,9 @@ export class AdminComponent implements OnInit, AfterViewInit {
 
   // get filterStatus() { return this.filterForm.get('filterStatus').value; }
 
-  constructor(public dialog: MatDialog, private router: Router) {
+  constructor(public dialog: MatDialog, private router: Router,
+    private _adminService: AdminService,
+  ) {
     this.filtered = false;
     this.pipe = new DatePipe('en');
     this.title = 'Trip Monitoring';
@@ -74,6 +79,15 @@ export class AdminComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
+    // sessionStorage.setItem("account", JSON.stringify(this.account));
+    this._adminService.GetAllUsers(null).subscribe((res) => {
+      if (res !== null) {
+        console.log("HEY THERE")
+        this.dataSource.data = res;
+        console.log(this.dataSource.data);
+      }
+
+    })
   }
 
   ngAfterViewInit() {
@@ -92,7 +106,12 @@ export class AdminComponent implements OnInit, AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+
+
+
+
   }
+
 
 
   // clear() {
