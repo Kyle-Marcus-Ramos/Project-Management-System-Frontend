@@ -3,6 +3,10 @@ a {
   color: inherit;
 }
 
+td {
+  text-align: center;
+  padding-top: 25px !important;
+}
 
 /* Layout */
 .s-layout {
@@ -104,13 +108,13 @@ a {
 }
 
 .pk-date {
-  padding-left: 1.45%;
+  padding-left: 7vh;
+  width: 15%;
   background-color: #1192A7;
   color: white;
 }
 
 .pk-status {
-  padding-left: 1.45%;
   background-color: #1192A7;
   color: white;
 }
@@ -124,7 +128,7 @@ a {
 }
 
 .tbl-header {
-  padding-right: 50px;
+  margin-left: 700px !important;
 }
 
 ::ng-deep .mat-paginator-range-label {

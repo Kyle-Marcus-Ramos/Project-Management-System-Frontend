@@ -1,2 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css"
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(assets/font/OpenSans-Regular.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(assets/font/OpenSans-Bold.ttf) format("opentype");
+}
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.cdk-overlay-container,
+.cdk-overlay-pane {
+  z-index: 0 !important;
+}

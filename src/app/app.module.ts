@@ -16,6 +16,7 @@ import { BoardComponent } from './components/board/board/board.component';
 import { ListComponent } from './components/board/list/list.component';
 import { AdminComponent } from './components/admin/admin.component';
 
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -188,7 +189,7 @@ FullCalendarModule.registerPlugins([
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-
+    HttpClientModule
   ],
   providers: [LocalService],
   bootstrap: [AppComponent]

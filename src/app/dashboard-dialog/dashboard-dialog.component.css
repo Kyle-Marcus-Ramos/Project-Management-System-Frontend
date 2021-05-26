@@ -1,5 +1,11 @@
-.container .mat-form-field + .mat-form-field{
-    margin-left: 20px;
+.container .mat-form-field+.mat-form-field {
+  margin-left: 20px;
 
-    color:black;
-  }
+  color: black;
+}
+
+
+::ng-deep .mat-dialog-container {
+  width: 80%;
+  background-color: gainsboro !important;
+}

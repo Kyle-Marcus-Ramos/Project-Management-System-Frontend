@@ -19,4 +19,4 @@ import { MaterialModule } from '../../material.module';
 
 export class DashboardModule {
 
- }
+}

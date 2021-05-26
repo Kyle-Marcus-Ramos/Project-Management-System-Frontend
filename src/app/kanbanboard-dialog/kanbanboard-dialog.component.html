@@ -1,51 +1,76 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<h1 style="margin-left: 15px;">Project Title</h1>
+<input type="text" name="email" [(ngModel)]="card.title" placeholder="Enter Issue">
 
-  <mat-grid-list cols="3" rowHeight="400px" >
-    <mat-grid-tile  colspan="2">
-      <div class="container"style="align-items: left;">
+
+
+<mat-grid-list cols="3" rowHeight="400px">
+  <mat-grid-tile colspan="2">
+    <div class="container" style="align-items: left;">
       <h3 style="margin-top: 50px;">Description</h3>
-      <mat-form-field style="min-width: 350px;"appearance="fill">
+      <mat-form-field style="min-width: 350px;" appearance="fill">
         <mat-label></mat-label>
-        <textarea 
-        cdkTextareaAutosize
-          cdkAutosizeMinRows="5"
-          matInput></textarea>
+        <textarea style="background: white !important;" cdkTextareaAutosize cdkAutosizeMinRows="5"
+          [(ngModel)]="card.description" matInput></textarea>
       </mat-form-field>
 
-      <mat-dialog-actions >
-        <button class="button" mat-button mat-dialog-close>Save</button>
+      <mat-dialog-actions style="margin-left: 12px;margin-top: 40px">
+        <button class="button" mat-button mat-dialog-close (click)="save()">Save</button>
         <button class="button" mat-button mat-dialog-close>Cancel</button>
       </mat-dialog-actions>
 
       <h3 style="margin-top: 30px;">Comments:</h3>
-      
+
       <mat-icon style="transform:scale(2.5)">account_circle</mat-icon>
-    
+
       <mat-form-field style="margin-left: 25px;min-width: 300px;" appearance="fill">
-        
-        <textarea 
-          cdkTextareaAutosize
-          cdkAutosizeMinRows="2"
-          matInput placeholder="Add a comment... "></textarea>
+
+        <textarea cdkTextareaAutosize cdkAutosizeMinRows="2" matInput placeholder="Add a comment... "></textarea>
       </mat-form-field>
 
-      </div>
-    </mat-grid-tile>
-  
-    <mat-grid-tile style="margin-left:-30px; "colspan="1" >
-    <div class="container"  style="align-items: left;">
-      <h3>Assignee:</h3>
-      <h3>Reporter:</h3>
-      <h3>Priority:</h3>
-      <h3>Estimate:</h3>
-      <h3>Due Date:</h3>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile style="margin-left:-30px; " colspan="1">
+    <div class="container" style="align-items: left; margin-top: 15vh">
+
+      <h4>Assignee:</h4> <input type="text" name="email" [(ngModel)]="card.assignee" placeholder="Enter Issue">
+
+
+      <h4 style="margin-top: 10px">Reporter:</h4> <input type="text" name="email" [(ngModel)]="card.reporter"
+        placeholder="Enter Issue">
+
+
+      <h4 style="margin-top: 10px">Priority:</h4><input type="text" name="email" [(ngModel)]="card.priority"
+        placeholder="Enter Issue">
+
+
+      <h4 style="margin-top: 10px">Estimate:</h4><input type="text" name="email" [(ngModel)]="card.estimate"
+        placeholder="Enter Issue">
+
+
+      <h4 style="margin-top: 10px">Due Date:</h4><input type="text" name="email" [(ngModel)]="card.dueDate"
+        placeholder="Enter Issue"> -->
+
+
+      <!-- <h3>Assignee:</h3> <input type="text" name="email" placeholder="Enter Issue">
+
+
+      <h3>Reporter:</h3> <input type="text" name="email" placeholder="Enter Issue">
+
+
+      <h3>Priority:</h3><input type="text" name="email" placeholder="Enter Issue">
+
+
+      <h3>Estimate:</h3><input type="text" name="email" placeholder="Enter Issue">
+
+
+      <h3>Due Date:</h3><input type="text" name="email" placeholder="Enter Issue"> -->
 
       <h5 style="margin-top:100px;text-align: right;">Created:</h5>
       <h5 style="text-align: right;">Updated:</h5>
     </div>
-    </mat-grid-tile>
-  </mat-grid-list>
+  </mat-grid-tile>
+</mat-grid-list>
 
 <!--
 
@@ -84,7 +109,7 @@
   </p>
 -->
 
-  <!--
+<!--
   <mat-form-field appearance="fill">
       <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" placeholder="Choose a date">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -93,7 +118,7 @@
 
 
 
-    <!--
+<!--
   <p>
     <mat-form-field hintLabel="Priority" appearance="fill">
       <mat-select>
@@ -118,10 +143,6 @@
     </mat-form-field>
   </p>
   -->
-    <!--
+<!--
     <p>Selected range: {{range.value | json}}</p>
   -->
-
-
-
-  

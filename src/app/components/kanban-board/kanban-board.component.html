@@ -1,79 +1,163 @@
-<!--<p>Kanban Board Page</p>
--->
-<div class="root">
-
-    <div class="board">
-        Project Board
-            <p class="board-name">
-                [Project name]
-            </p>
-            <div class="board-wrapper">
-                <div class="board-columns" cdkDropListGroup>
-                    <!---->
-                    <div class="board-column" style="background-color: lightcoral;"*ngFor="let column of board.columns">
-                        <div class="column-title">
-                            <!--TO DO-->
-                            {{column.name}}
-                        </div>
-                        <div class="task-container"
-                            cdkDropList
-                            
-                            [cdkDropListData]="column.tasks"
-                            (cdkDropListDropped)="drop($event)"
-                        >
-                            <div class="task" *ngFor="let item of column.tasks" cdkDrag>
-                                {{item}}
-                            </div>
-                        </div>
-                    </div>
-                    <!--
-                    <div class="board-column" style="background-color:goldenrod;">
-                        <div class="column-title">
-                            IN PROGRESS
-                        </div>
-                        <div class="task-container"
-                            cdkDropList
-                            #todoList="cdkDropList"
-                            [cdkDropListData]="inprogress"
-                            (cdkDropListDropped)="drop($event)"
-                        >
-                            <div class="task" *ngFor="let item of inprogress" cdkDrag>
-                                {{item}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="board-column" style="background-color:lightgreen">
-                        <div class="column-title">
-                            COMPLETED
-                        </div>
-                        <div class="task-container"
-                        cdkDropList
-                        #todoList="cdkDropList"
-                        [cdkDropListData]="completed"
-                        (cdkDropListDropped)="drop($event)"
-                    >
-                        <div class="task" *ngFor="let item of completed" cdkDrag>
-                            {{item}}
-                        </div>
-                    </div>
-                    </div>
-                    <div class="board-column" style="background-color:lavender;">
-                        <div class="column-title">
-                            FOR TESTING
-                        </div>
-                        <div class="task-container"
-                        cdkDropList
-                        #todoList="cdkDropList"
-                        [cdkDropListData]="fortesting"
-                        (cdkDropListDropped)="drop($event)"
-                    >
-                        <div class="task" *ngFor="let item of fortesting" cdkDrag>
-                            {{item}}
-                        </div>
-                    </div>
-                    </div>-->
-            
-                  </div>
-            </div>
+<!-- <div class="root">
+  <div class="container" style="max-width:inherit;width:auto;height:100%;">
+    <div class="row">
+      <div class="col-11"></div>
     </div>
+    <div class="row" style="height:inherit;">
+      <app-list *ngFor="let list of lists;let i = index" [list]="list" [listIndex]="i"
+        (moveCardAcrossList)="moveCardAcrossList($event)" (deleteList)="deleteList($event)" attr.listIndex="{{i}}">
+      </app-list>
+      <div class="col custom-col" style="margin:10px;padding:15px;padding-top:15px;padding-bottom:15px;">
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="root">
+  <div class="container">
+    <div class="row">
+
+      <!-- COLUMN 1  -->
+
+      <div class="col">
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8" cdkDropList #table1 #list1="cdkDropList"
+          [cdkDropListData]="dataSource.data" [cdkDropListConnectedTo]="[list2] || [list3] || [list4]"
+          (cdkDropListDropped)="drop($event)" id="table1">
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag></mat-row>
+        </mat-table>
+      </div>
+
+      <!-- COLUMN  2 -->
+      <div class="col">
+        <mat-table [dataSource]="dataSource2" class="mat-elevation-z8" cdkDropList #table2 #list2="cdkDropList"
+          [cdkDropListData]="dataSource2.data" [cdkDropListConnectedTo]="[list1]" (cdkDropListDropped)="drop($event)"
+          id="table2">
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag></mat-row>
+        </mat-table>
+      </div>
+
+      <!-- COLUMN 3 -->
+      <div class="col">
+        <mat-table [dataSource]="dataSource3" class="mat-elevation-z8" cdkDropList #table3 #list3="cdkDropList"
+          [cdkDropListData]="dataSource3.data" [cdkDropListConnectedTo]="[list1]" (cdkDropListDropped)="drop($event)"
+          id="table3">
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag></mat-row>
+        </mat-table>
+      </div>
+
+      <div class="col">
+        <mat-table [dataSource]="dataSource4" class="mat-elevation-z8" cdkDropList #table2 #list2="cdkDropList"
+          [cdkDropListData]="dataSource4.data" [cdkDropListConnectedTo]="[list1]" (cdkDropListDropped)="drop($event)"
+          id="table4">
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag></mat-row>
+        </mat-table>
+      </div>
+
+    </div>
+  </div>
 </div>

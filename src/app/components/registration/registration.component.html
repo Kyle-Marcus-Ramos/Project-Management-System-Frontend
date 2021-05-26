@@ -1,33 +1,18 @@
-<div class="container">
-    <div class="row">
-      <div class="col-10">
-          <h2>Angular Reactive Form validation</h2>
-          <form>
-            <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input type="text"  class="form-control" formControlName="firstName" [ngClass]="{'is-invalid':form.get('firstName').touched && form.get('firstName').invalid}" required />
-    
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input type="text" class="form-control" formControlName="lastName" [ngClass]="{'is-invalid':form.get('lastName').touched && form.get('lastName').invalid}" required />
-       
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="text" class="form-control" formControlName="email" [ngClass]="{'is-invalid':form.get('email').touched && form.get('email').invalid}"   />
-      
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control"  formControlName="password" [ngClass]="{'is-invalid':form.get('password').touched && form.get('password').invalid}" />
+<div class="border">
+  <div class="passwordbox">
+    <img src="/assets/images/picture.jpg" class="picture">
+    <h1> Registration </h1>
+    <p>Name</p>
+    <input type="text" name="" [(ngModel)]="account.name" placeholder="Enter Name">
+    <p>Email</p>
+    <input type="text" name="" [(ngModel)]="account.email" placeholder="Enter Email">
+    <p>Password</p>
+    <input type="text" name="" [(ngModel)]="account.password" placeholder="Enter Password">
+    <p>Are you an Admin?</p>
+    <mat-checkbox class="example-margin" [(ngModel)]="account.isAdmin"></mat-checkbox>
 
-             
-            </div>
-            <div class="form-group">
-              <button class="btn btn-primary"  [disabled]="!form.valid">Register</button>
-            </div>
-          </form>
-      </div>
-    </div>
+    <input type="submit" name="" value="Submit" (click)="registration()">
+    <a href="../login/login">Already have an account?</a><br>
   </div>
+
+</div>

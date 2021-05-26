@@ -32,41 +32,27 @@
                       class="table table-no-bordered table-hover" cellspacing="0" style="width:100%">
 
                       <ng-container matColumnDef="tm" class="tbl-header">
-                        <th *matHeaderCellDef mat-sort-header class="left-spacing-2 pk-date"> TM No.
+                        <th *matHeaderCellDef mat-sort-header class="left-spacing-2 pk-date"> Name
                         </th>
-                        <td mat-cell *matCellDef="let row"> {{row.tm}} </td>
+                        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
                       </ng-container>
 
                       <ng-container matColumnDef="employeeId" class="tbl-header">
-                        <th *matHeaderCellDef mat-sort-header class="pk-table">Employee ID</th>
-                        <td mat-cell *matCellDef="let row"> {{row.employeeId}} </td>
+                        <th *matHeaderCellDef mat-sort-header class="pk-table" style="margin-left: 50px !important">
+                          Email</th>
+                        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
                       </ng-container>
 
                       <ng-container matColumnDef="employeeName" class="tbl-header">
-                        <th *matHeaderCellDef mat-sort-header class="pk-table">Employee Name</th>
+                        <th *matHeaderCellDef mat-sort-header class="pk-table">Is Admin</th>
                         <td mat-cell *matCellDef="let row">
-                          {{row.employeeName}}
+                          {{row.isAdmin}}
                         </td>
-                      </ng-container>
-
-                      <ng-container matColumnDef="numberOfTrips" class="tbl-header">
-                        <th *matHeaderCellDef mat-sort-header class="pk-table">No. of Trips</th>
-                        <td mat-cell *matCellDef="let row"> {{row.numberOfTrips}} </td>
-                      </ng-container>
-
-                      <ng-container matColumnDef="date" class="tbl-header">
-                        <th *matHeaderCellDef mat-sort-header class="pk-table"> Date </th>
-                        <td mat-cell *matCellDef="let row">{{row.date | date: 'dd/MM/yyyy'}} </td>
-                      </ng-container>
-
-                      <ng-container matColumnDef="role" class="tbl-header">
-                        <th *matHeaderCellDef mat-sort-header class="pk-table">Role</th>
-                        <td mat-cell *matCellDef="let row"> {{row.role}} </td>
                       </ng-container>
 
                       <ng-container matColumnDef="status" class="tbl-header">
                         <th *matHeaderCellDef mat-sort-header class="pk-table"></th>
-                        <td mat-cell *matCellDef="let row">
+                        <td mat-cell *matCellDef="let row" style="padding-bottom: 14px">
                           <div *ngIf="show; else elseBlock">
                             <button mat-button class="btn-edit">View</button>
                           </div>
