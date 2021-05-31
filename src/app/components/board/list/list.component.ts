@@ -5,6 +5,7 @@ import { Card, CardInterface } from '../../../model/card/card.model';
 import { MovementIntf, Movement } from 'src/app/model/card/movement';
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { KanbanboardDialogComponent } from 'src/app/kanbanboard-dialog/kanbanboard-dialog.component';
+import { CardService } from 'src/app/service/api/card.service';
 
 @Component({
   selector: 'app-list',
@@ -28,10 +29,11 @@ export class ListComponent implements OnInit {
   /*TEST*/
   dialogValue: string;
   sendValue: string;
-
+  projectId: number;
 
   /*TEST*/
-  constructor(private elementRef: ElementRef, @Inject(DOCUMENT) private document: Document, public dialog: MatDialog) {
+  constructor(private elementRef: ElementRef, @Inject(DOCUMENT) private document: Document, public dialog: MatDialog,
+    private _cardService: CardService,) {
 
   }
   openDialog() {
@@ -53,12 +55,21 @@ export class ListComponent implements OnInit {
 
 
   ngOnInit() {
+    // this.projectId = JSON.parse(sessionStorage.getItem("projectId"));
+    // console.log('list')
+    // this._cardService.GetCards(this.projectId).subscribe((res) => {
+    //   if (res !== null) {
+    //     console.log(res);
+    //     // sessionStorage.setItem("projects", res)
+    //   }
 
+    // });
   }
 
   addNewCard() {
 
-    const card = new Card(this.cardCount++ + '', 'Issue ' + this.cardCount, 'Description ' + this.cardCount, 'sample desc');
+
+    const card = new Card(this.cardCount++ + '', 'Issue ' + this.cardCount, 'Description ' + this.cardCount, 'sample desc' + this.cardCount, 'sample title');
     this.list.cards.push(card);
     this.newCardAdded.emit(card);
   }

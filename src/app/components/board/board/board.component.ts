@@ -20,7 +20,7 @@ import { SaveKanbanRequestDTO } from 'src/app/model/api/kanban';
 })
 export class BoardComponent implements OnInit {
   public card: SaveKanbanRequestDTO;
-
+  public updateCard: SaveKanbanRequestDTO;
   lists: ListInterface[];
 
   constructor(private localService:
@@ -50,12 +50,12 @@ export class BoardComponent implements OnInit {
     this._cardService.GetCards(this.card).subscribe((res) => {
       console.log("RESPONSE FOR BOARD COMPONENT: ")
       console.log(res);
-      // if (res !== null) {
-      //   this.lists = res;
-      // }
+      if (res !== null) {
+        this.lists = res;
+      }
     })
 
-    this.lists = board.lists;
+    // this.lists = board.lists;
 
     // ideally retrive and initialize from some storage.
     if (this.lists === undefined) {
@@ -112,6 +112,18 @@ export class BoardComponent implements OnInit {
     const cardMoved = this.lists[movementInformation.fromListIdx].cards.splice(movementInformation.fromCardIdx, 1);
     this.lists[movementInformation.toListIdx].cards.splice(movementInformation.toCardIdx, 0, ...cardMoved);
 
+    console.log(movementInformation);
+    cardMoved.forEach((item) => {
+      console.log(item);
+      this.updateCard = new SaveKanbanRequestDTO();
+      this.updateCard.description = item.description;
+      this.updateCard.title = item.title;
+      this.updateCard.position = movementInformation.toListIdx;
+      console.log(this.updateCard);
+      this._cardService.UpdateCard(this.updateCard).subscribe((res) => {
+      })
+
+    })
 
 
 

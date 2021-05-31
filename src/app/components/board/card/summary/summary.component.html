@@ -2,7 +2,7 @@
   id="list-{{listIndex}}-card-{{cardIndex}}" attr.listIndex="{{listIndex}}" attr.cardIndex="{{cardIndex}}"
   (dragover)="allowCardDragToBeDropped($event)">
   <div class="card-body">
-    <h2 class="card-title" [(appContentEdit)]="card.header" [draggable]="'false'"> </h2>
-    <h6 class="text-muted card-subtitle mb-2" [(appContentEdit)]="card.summary" [draggable]="'false'"></h6>
+    <h2 class="card-title" [(appContentEdit)]="card.title" [draggable]="'false'"> </h2>
+    <h6 class="text-muted card-subtitle mb-2" [(appContentEdit)]="card.description" [draggable]="'false'"></h6>
   </div>
 </div>

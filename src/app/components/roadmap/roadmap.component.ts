@@ -22,7 +22,8 @@ import { DatePipe } from '@angular/common';
 export class RoadmapComponent implements PipeTransform {
   public card: SaveCalendarRequestDTO;
 
-  public events = [];
+  public events: Array<any> = [];
+  public eventsArray = [];
   title = 'ProjectManagementSystem';
 
   transform(value: string) {
@@ -35,8 +36,8 @@ export class RoadmapComponent implements PipeTransform {
     chartType: 'Timeline',
     dataTable: [
       ['Day', 'Name', 'Start', 'End'],
-      ['Today', 'Project A', new Date(2020, 1, 1), new Date(2020, 1, 2)],
-      ['Today', 'Project B', new Date(2020, 1, 1, 12,), new Date(2020, 1, 1, 13,)],
+      ['Test', 'Project A', new Date(2020, 1, 1), new Date(2020, 1, 2)],
+      ['Test 1', 'Project B', new Date(2020, 1, 1, 12,), new Date(2020, 1, 1, 13,)],
       ['Today', 'Project C', new Date(2020, 1, 1, 14,), new Date(2020, 1, 1, 15,)],
       ['Today', 'Project D', new Date(2020, 1, 1, 10,), new Date(2020, 1, 1, 15,)],
     ],
@@ -55,28 +56,39 @@ export class RoadmapComponent implements PipeTransform {
 
 
     this.card = new SaveCalendarRequestDTO();
-    this.card.projectId = 11;
-    this._cardService.GetCards(this.card).subscribe((res) => {
+    this.card.projectId = JSON.parse(sessionStorage.getItem("projectId"));
+    this._cardService.GetCardss(this.card).subscribe((res) => {
       if (res !== null) {
-        res.forEach((item) => {
-          var a = this.transform(item.estimate);
-          this.events.push({
-            Day: a, Name: item.title, Start: new Date(item.estimate), End: new Date(item.dueDate)
-          })
-        });
-        console.log(this.events);
+        console.log(res);
+        // res.forEach((item) => {
+        //   // var a = this.transform(item.estimate);
+        //   console.log(item);
+        //   // this.events.push(
+        //   //   item.estimate, item.title, new Date(item.estimate), new Date(item.dueDate)
+        //   // )
+        //   // item.forEach(element => {
+        //   //   console.log(element);
+        //   // });
+        //   // this.events.push(
+        //   //   a, item.title
+        //   // )
+        //   // this.events.push(item);
 
+        //   this.eventsArray.push(this.events)
+        //   console.log('next record');
+        //   // console.log(this.events);
+        //   // console.log(item);
+        // });
+        console.log(this.eventsArray);
+        // console.log(this.events);
 
-        this.timelineChartData = {
-          chartType: 'Timeline',
-          dataTable: [
-            ['Day', 'Name', 'Start', 'End'],
-            ['Today', 'Project A', new Date(2020, 1, 1), new Date(2020, 1, 2)],
-            ['Today', 'Project B', new Date(2020, 1, 1, 12,), new Date(2020, 1, 1, 13,)],
-            ['Today', 'Project C', new Date(2020, 1, 1, 14,), new Date(2020, 1, 1, 15,)],
-            ['Today', 'Project D', new Date(2020, 1, 1, 10,), new Date(2020, 1, 1, 15,)],
-          ],
-        }
+        var a = ['Today', 'Project D', new Date(2020, 1, 1, 10,), new Date(2020, 1, 1, 15,)];
+        console.log(a);
+        // this.timelineChartData = {
+        //   chartType: 'Timeline',
+        //   dataTable: res,
+        // }
+        // console.log(this.timelineChartData);
       }
     })
 

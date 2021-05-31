@@ -8,5 +8,6 @@ export class SaveKanbanRequestDTO {
     estimate: string;
     dueDate: string;
     projectId: number;
+    position: number;
 }
 

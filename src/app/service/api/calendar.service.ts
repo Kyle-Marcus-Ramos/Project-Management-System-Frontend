@@ -17,6 +17,7 @@ import { SaveCalendarRequestDTO } from 'src/app/model/api/calendar';
 @Injectable()
 export class CalendarService {
     private getcardurl = "https://localhost:5001/api/Card/GetCalendarByProjectId";
+    private getcardsurl = "https://localhost:5001/api/Card/GetCalendarsByProjectId";
     private projectId: number;
 
     // private _getLogin = "api/Account/GetAccountByUsernamePassword";
@@ -33,6 +34,20 @@ export class CalendarService {
         }
 
         return this._http.post(this.getcardurl, projectId, httpOptions);
+        // return this._http.get(this._url);
+
+    }
+
+    GetCardss(projectId: SaveCalendarRequestDTO): Observable<any> {
+
+        // var headerOptions = new Headers({ 'Content-Type': '"application/json' });
+        // var requestOption = new RequestOptions({ method: RequestMethod.Post, headers: headerOptions });
+        // return this._http.post(this._url + this._getLogin, account);
+        const httpOptions = {
+            headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+        }
+
+        return this._http.post(this.getcardsurl, projectId, httpOptions);
         // return this._http.get(this._url);
 
     }

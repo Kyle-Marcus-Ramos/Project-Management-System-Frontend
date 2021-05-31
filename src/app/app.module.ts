@@ -15,6 +15,7 @@ import { HomeLayoutComponent } from './components/layout/home-layout/home-layout
 import { BoardComponent } from './components/board/board/board.component';
 import { ListComponent } from './components/board/list/list.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -119,7 +120,7 @@ FullCalendarModule.registerPlugins([
     DashboardDialogComponent,
     KanbanboardDialogComponent,
     AdminComponent,
-
+    ProfileComponent
   ],
   entryComponents: [DashboardDialogComponent, KanbanboardDialogComponent],
   imports: [
