@@ -6,7 +6,25 @@ a {
 
 /* Layout */
 .s-layout {
+
   display: flex;
+
+
+
+
+
+ 
+    display: flex;
+
+    height:88vh;
+    background-image: url('/assets/images/calendarbackground.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+
+  
+
+
 }
 
 .s-layout__content {

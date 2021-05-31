@@ -9,6 +9,7 @@ import { KanbanBoardModule } from './components/kanban-board/kanban-board.module
 import { RegistrationModule } from './components/registration/registration.module';
 import { RoadmapModule } from './components/roadmap/roadmap.module';
 import { BoardModule } from './components/board/board/board.module';
+import { ProfilePageModule } from './components/profile-page/profile-page.module';
 
 const routes: Routes = [
   {
@@ -44,6 +45,10 @@ const routes: Routes = [
   {
     path: 'board',
     loadChildren: () => BoardModule
+  },
+  {
+    path: 'profile-page',
+    loadChildren: () => ProfilePageModule
   },
 
   { path: '**', redirectTo: '' }

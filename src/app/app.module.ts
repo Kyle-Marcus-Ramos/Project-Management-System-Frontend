@@ -54,6 +54,7 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { FormGroup, FormControl} from '@angular/forms';*/
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
   interactionPlugin,
@@ -80,6 +81,7 @@ FullCalendarModule.registerPlugins([
     ResetPwComponent,
     DashboardDialogComponent,
     KanbanboardDialogComponent,
+    ProfilePageComponent,
 
   ],
   entryComponents: [DashboardDialogComponent, KanbanboardDialogComponent],
