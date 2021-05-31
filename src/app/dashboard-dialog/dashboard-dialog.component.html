@@ -1,12 +1,34 @@
-    <h2 mat-dialog-title>Project Information</h2>
-        <h3 style="margin-top:30px;">Project Title</h3>
-        <mat-form-field appearance="fill">
-            <input matInput>
+<h2 mat-dialog-title>Project Information</h2>
+      <mat-grid-list cols="2" rowHeight="250px">
 
-        </mat-form-field>
+        <mat-grid-tile colspan="1">
+          <div class="container">
+          <h3 style="margin-top:0px;">Project Title</h3>
+          <mat-form-field appearance="fill">
+              <input matInput>
+          </mat-form-field>
+          <h3 style="margin-top:0px">Project Leader</h3>
+          <mat-form-field appearance="fill">
+              <input matInput>
+          </mat-form-field>
+          </div>
+        </mat-grid-tile>
 
-        <form [formGroup]="productForm">   
-               <h3 style="margin-top:30px;">Invite members</h3>
+        <mat-grid-tile  colspan="1">    
+          <div class="container">
+            <h3 style="margin-top:0px;">Project Budget</h3>
+            <mat-form-field appearance="fill">
+                <input matInput>
+            </mat-form-field>
+            <h3 style="margin-top:0px;">Project Duration</h3>
+            <mat-form-field appearance="fill">
+                <input matInput>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+        <form class="container" [formGroup]="productForm">   
+               <h3>Project members</h3>
                <div formArrayName="collaborator">
                  <div *ngFor="let item of collaborator.controls; let pointIndex=index" [formGroupName]="pointIndex">
      

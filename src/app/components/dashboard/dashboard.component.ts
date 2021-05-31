@@ -15,7 +15,8 @@ export class DashboardComponent {
   ];
   constructor(public dialog: MatDialog){}
   openDialog() {
-    this.dialog.open(DashboardDialogComponent);
+    this.dialog.open(DashboardDialogComponent, { 
+      width: '600px'});
 
     //dialogRef.afterClosed().subscribe(result )
   }
