@@ -89,6 +89,7 @@ export class KanbanboardDialogComponent implements OnInit {
   }
 
   save() {
+    this.card.status = 'TO DO';
     this.card.projectId = JSON.parse(sessionStorage.getItem("projectId"));
 
     // if (this.index === 0) {

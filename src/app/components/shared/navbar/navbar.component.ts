@@ -17,6 +17,12 @@ export class NavbarComponent implements OnInit {
   public setTitle: string;
 
 
+  profileDetails = {
+    isAdmin: '',
+    name: '',
+
+  }
+
   constructor(private _router: Router,
     private _activatedRoute: ActivatedRoute,) {
     var services = ['/telecoms', 'gaming-pins', 'prepaid-insurance', 'pay-tv']
@@ -35,6 +41,22 @@ export class NavbarComponent implements OnInit {
 
 
   ngOnInit() {
+    var response = JSON.parse(sessionStorage.getItem("loginResponse"));
+    console.log("TEST TSET TEST TESTSTS EST")
+    console.log(response.name);
+
+
+    if (response.isAdmin === false) {
+
+      this.profileDetails.name = response.name;
+      this.profileDetails.isAdmin = "ADMIN";
+
+    }
+    if (response.isAdmin === true) {
+      this.profileDetails.name = response.name;
+      this.profileDetails.isAdmin = "USER";
+
+    }
 
 
   }

@@ -80,26 +80,35 @@
         <table>
           <tbody>
             <tr>
-              <td>First Name</td>
+              <td>Account Id</td>
               <td>:</td>
-              <td>FirstName</td>
+              <td>{{this.profileDetails.accountId}}</td>
             </tr>
             <tr>
-              <td>Last Name</td>
+              <td>Name</td>
               <td>:</td>
-              <td>LastName</td>
+              <td>{{this.profileDetails.name}}</td>
             </tr>
             <tr>
               <td>Email</td>
               <td>:</td>
-              <td>email@gmail.com</td>
+              <td>{{this.profileDetails.email}}</td>
             </tr>
             <tr>
-              <td>Projects</td>
+              <td>Password</td>
               <td>:</td>
-              <td>Project 1</td>
+              <td>{{this.profileDetails.password}}</td>
             </tr>
-
+            <tr>
+              <td>Admin</td>
+              <td>:</td>
+              <td>{{this.profileDetails.isAdmin}}</td>
+            </tr>
+            <tr>
+              <td>Is Active</td>
+              <td>:</td>
+              <td>{{this.profileDetails.isActive}}</td>
+            </tr>
           </tbody>
         </table>
       </div>

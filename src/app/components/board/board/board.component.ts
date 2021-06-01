@@ -54,13 +54,13 @@ export class BoardComponent implements OnInit {
     // Hardcoded for Demonstration Purposes only
     // this.card.projectId = 11;
 
-    this._cardService.GetCards(this.card).subscribe((res) => {
+    setInterval(() => this._cardService.GetCards(this.card).subscribe((res) => {
       console.log("RESPONSE FOR BOARD COMPONENT: ")
       console.log(res);
       if (res !== null) {
         this.lists = res;
       }
-    })
+    }), 9000);
 
     // this.lists = board.lists;
 

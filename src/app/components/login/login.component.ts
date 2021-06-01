@@ -43,6 +43,10 @@ export class LoginComponent implements OnInit {
         })
 
         sessionStorage.setItem("idAccount", JSON.stringify(res.accountId));
+        sessionStorage.setItem("loginResponse", JSON.stringify(res));
+
+        console.log(JSON.parse(sessionStorage.getItem("loginResponse")));
+
         this.router.navigateByUrl('/dashboard/dashboard');
       }
 
