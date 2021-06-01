@@ -78,6 +78,13 @@ export class AdminComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    if (!localStorage.getItem('foo')) {
+      localStorage.setItem('foo', 'no reload')
+      location.reload()
+    } else {
+      localStorage.removeItem('foo')
+    }
+
     this.dataSource.paginator = this.paginator;
     // sessionStorage.setItem("account", JSON.stringify(this.account));
     this._adminService.GetAllUsers(null).subscribe((res) => {

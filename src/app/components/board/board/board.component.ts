@@ -38,6 +38,13 @@ export class BoardComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!localStorage.getItem('foo')) {
+      localStorage.setItem('foo', 'no reload')
+      location.reload()
+    } else {
+      localStorage.removeItem('foo')
+    }
+
     const board = this.localService.getBoard();
     this.card = new SaveKanbanRequestDTO();
 

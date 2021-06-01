@@ -1,9 +1,19 @@
 .root {
-    float:right;
-    margin-right: 1vw;
-    margin-top:5vh;
-    width:85%;
-    display: flex;
-    flex-direction: column;
-    height:100%;
-  }
+  /*float:right;
+  /*width:85%;
+  display: flex;
+  flex-direction: column;
+  height:100%;*/
+
+
+  float: right;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 88vh;
+  background-image: url('/assets/images/roadmapbackground.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+
+}
