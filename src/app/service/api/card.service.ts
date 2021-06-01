@@ -16,6 +16,7 @@ import { SaveKanbanRequestDTO } from 'src/app/model/api/kanban';
 @Injectable()
 export class CardService {
     private _url = "https://localhost:5001/api/Card/SaveCard";
+    private _updateUrl = "https://localhost:5001/api/Card/UpdateCard";
     private getcardurl = "https://localhost:5001/api/Card/GetCardByProjectId";
     private projectId: number;
 
@@ -35,6 +36,20 @@ export class CardService {
         }
 
         return this._http.post(this._url, account, httpOptions);
+        // return this._http.get(this._url);
+
+    }
+
+    UpdateCard(account: SaveKanbanRequestDTO): Observable<any> {
+
+        // var headerOptions = new Headers({ 'Content-Type': '"application/json' });
+        // var requestOption = new RequestOptions({ method: RequestMethod.Post, headers: headerOptions });
+        // return this._http.post(this._url + this._getLogin, account);
+        const httpOptions = {
+            headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+        }
+
+        return this._http.post(this._updateUrl, account, httpOptions);
         // return this._http.get(this._url);
 
     }

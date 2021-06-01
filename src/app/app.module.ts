@@ -15,6 +15,8 @@ import { HomeLayoutComponent } from './components/layout/home-layout/home-layout
 import { BoardComponent } from './components/board/board/board.component';
 import { ListComponent } from './components/board/list/list.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -91,6 +93,7 @@ import { PortalModule } from '@angular/cdk/portal';
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { ProjectComponent } from './components/project/project.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -119,6 +122,8 @@ FullCalendarModule.registerPlugins([
     DashboardDialogComponent,
     KanbanboardDialogComponent,
     AdminComponent,
+    ProfileComponent,
+    ProjectComponent,
 
   ],
   entryComponents: [DashboardDialogComponent, KanbanboardDialogComponent],

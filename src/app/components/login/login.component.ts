@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetAccountByEmailPasswordRequestDTO } from 'src/app/model/api/account';
 import { AccountService } from 'src/app/service/api/account.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,12 @@ export class LoginComponent implements OnInit {
   title = 'ProjectManagementSystem';
 
   public account: GetAccountByEmailPasswordRequestDTO;
+  public toast = swal.mixin({
+    toast: true,
+    position: 'top-right',
+    showConfirmButton: false,
+    timer: 3000
+  });
 
   constructor(
     private router: Router,
@@ -29,11 +36,23 @@ export class LoginComponent implements OnInit {
       if (res !== null) {
         console.log("TEST:");
         console.log(res);
+
+        this.toast.fire({
+          type: 'success',
+          title: 'Login Successful!'
+        })
+
         sessionStorage.setItem("idAccount", JSON.stringify(res.accountId));
         this.router.navigateByUrl('/dashboard/dashboard');
       }
 
+    }, _ => {
+      this.toast.fire({
+        type: 'error',
+        title: 'An error has been encountered while logging in'
+      })
     })
+
 
   }
 

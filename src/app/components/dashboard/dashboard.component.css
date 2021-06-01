@@ -1,3 +1,11 @@
+::ng-deep body {
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('/assets/images/dashboardbackground.jpg') !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+
+}
+
 .root {
   float: right;
   width: 85%;
@@ -19,8 +27,7 @@
   /*min-width: 0;
     min-height: 0;*/
   margin-top: 5vh;
-  margin-left: 2vw;
-  margin-right: 2vw;
+  margin-right: 4vw;
   font-size: 20px;
   height: 30vh !important;
 }

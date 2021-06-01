@@ -89,7 +89,7 @@ export class KanbanboardDialogComponent implements OnInit {
   }
 
   save() {
-    this.card.projectId = 11;
+    this.card.projectId = JSON.parse(sessionStorage.getItem("projectId"));
 
     // if (this.index === 0) {
     //   this.card.status = "TO DO";
@@ -103,8 +103,6 @@ export class KanbanboardDialogComponent implements OnInit {
     // else if (this.index === 3) {
     //   this.card.status = "FOR TESTING";
     // }
-
-
 
     console.log(this.card);
     this._cardService.SaveCard(this.card).subscribe((res) => {

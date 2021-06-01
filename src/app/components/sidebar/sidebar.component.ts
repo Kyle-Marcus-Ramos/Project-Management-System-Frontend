@@ -84,6 +84,12 @@ export class SidebarComponent implements OnInit {
     goToRoadmap() {
         this.router.navigate(['/roadmap/roadmap']);
     }
+    goToProfile() {
+        this.router.navigate(['/profile/profile']);
+    }
+    goToProject() {
+        this.router.navigate(['/project/project']);
+    }
     goToAdmin() {
         this.router.navigate(['/admin/admin']);
     }

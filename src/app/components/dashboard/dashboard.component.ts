@@ -37,14 +37,18 @@ export class DashboardComponent {
 
     console.log(this.dashboardDto.accountId);
     // sessionStorage.setItem('', this.dashboardDto.accountId)
-    this._dashboardService.getProjects(this.dashboardDto).subscribe((res) => {
+
+    // after 5 seconds stop
+    // setTimeout(() => { clearInterval(timerId); alert('stop'); }, 5000);
+
+    setInterval(() => this._dashboardService.getProjects(this.dashboardDto).subscribe((res) => {
       if (res !== null) {
         console.log(res);
         this.Projects = res;
         // sessionStorage.setItem("projects", res)
       }
 
-    })
+    }), 9000);
   }
 
   routeToKanbanBoard(item) {
