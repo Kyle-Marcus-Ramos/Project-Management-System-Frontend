@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 // import PerfectScrollbar from 'perfect-scrollbar';
+import swal from 'sweetalert2';
 
 declare const $: any;
 
@@ -31,6 +32,13 @@ export interface ChildrenItems {
 export class SidebarComponent implements OnInit {
     @Output() public pageTitle: EventEmitter<string> = new EventEmitter<string>();
     public path: string;
+    public toast = swal.mixin({
+        toast: true,
+        position: 'top-right',
+        showConfirmButton: false,
+        timer: 3000
+    });
+    public isAdmin: boolean;
     constructor(
         private router: Router,
         public route: ActivatedRoute,
@@ -40,12 +48,31 @@ export class SidebarComponent implements OnInit {
 
 
     ngOnInit() {
+
+
+        var response = JSON.parse(sessionStorage.getItem("loginResponse"));
+        console.log("TEST TSET TEST TESTSTS EST")
+        console.log(response.name);
+
+        console.log(response.isAdmin);
+
+
+
+        if (response.isAdmin === false) {
+
+            this.isAdmin = false;
+        }
+        else {
+            this.isAdmin = true;
+        }
         this.pageTitle.emit('Dashboard');
         // this.menuItems = ROUTES.filter(menuItem => menuItem);
         // if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
         //     const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
         //     this.ps = new PerfectScrollbar(elemSidebar);
         // }
+
+
     }
 
 
@@ -73,6 +100,8 @@ export class SidebarComponent implements OnInit {
 
 
     goToDashboard() {
+        sessionStorage.setItem("projectId", null);
+
         this.router.navigate(['/dashboard/dashboard']);
     }
     goToKanbanBoard() {
@@ -93,7 +122,15 @@ export class SidebarComponent implements OnInit {
     goToAdmin() {
         this.router.navigate(['/admin/admin']);
     }
+    logout() {
+        this.toast.fire({
+            type: 'success',
+            title: 'Logout Successful!'
+        })
+        sessionStorage.clear()
+        this.router.navigate(['/login/login']);
 
+    }
 
     setPageTitle(page: string) {
         this.pageTitle.emit(page);

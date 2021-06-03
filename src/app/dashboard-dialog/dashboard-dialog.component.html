@@ -1,24 +1,51 @@
-    <h4 mat-dialog-title style="font-weight: bold;">Project Information</h4>
-    <h4 style="margin-top:15px;">Project Title</h4>
-    <mat-form-field appearance="fill">
-      <input matInput [(ngModel)]="card.name" style="background: white;">
+<h2 mat-dialog-title>Project Information</h2>
+<mat-grid-list cols="2" rowHeight="150px">
 
-    </mat-form-field>
+  <mat-grid-tile colspan="1">
+    <div class="container">
+      <h4 style="margin-top:0px;">Project Title</h4>
+      <mat-form-field appearance="fill">
+        <input matInput [(ngModel)]="card.name" style="background: white;">
+      </mat-form-field>
+      <h4 style="margin-top:0px">Project Leader</h4>
+      <mat-form-field appearance="fill">
+        <input matInput style="background: white;" [(ngModel)]="project.leader">
+      </mat-form-field>
+    </div>
+  </mat-grid-tile>
 
-    <form [formGroup]="productForm">
-      <h4 style="margin-top:15px;">Invite members</h4>
-      <div formArrayName="collaborator">
-        <div *ngFor="let item of collaborator.controls; let pointIndex=index" [formGroupName]="pointIndex">
+  <mat-grid-tile colspan="1">
+    <div class="container">
+      <h4 style="margin-top:0px;">Project Budget</h4>
+      <mat-form-field appearance="fill">
+        <input matInput style="background: white;" [(ngModel)]="project.budget">
+      </mat-form-field>
+      <h4 style="margin-top:0px;">Project Duration</h4>
+      <mat-form-field appearance="fill">
+        <input matInput style="background: white;" [(ngModel)]="project.duration">
+      </mat-form-field>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
 
-          <mat-form-field appearance="fill">
-            <input matInput formControlName="email" style="background: white;" />
-          </mat-form-field>
 
-          <button type="button" (click)="deleteCollaborator(pointIndex)">Delete</button>
-        </div>
-        <button style="margin-left: 192px;" type="button" (click)="addCollaborator()">Add</button>
+<form [formGroup]="productForm">
+  <div style="margin-left: 18px">
+    <h4 style="margin-top:15px;">Invite members</h4>
+    <div formArrayName="collaborator">
+      <div *ngFor="let item of collaborator.controls; let pointIndex=index" [formGroupName]="pointIndex">
+
+        <mat-form-field appearance="fill">
+          <input matInput formControlName="email" style="background: white;" />
+        </mat-form-field>
+
+        <button type="button" (click)="deleteCollaborator(pointIndex)">Delete</button>
       </div>
-    </form>
-    <mat-dialog-actions>
-      <button class="button" mat-button mat-dialog-close (click)="save()">Send</button>
-    </mat-dialog-actions>
+      <button style="margin-left: 192px;" type="button" (click)="addCollaborator()">Add</button>
+    </div>
+  </div>
+
+</form>
+<mat-dialog-actions>
+  <button class="button" style="margin-left: 18px" mat-button mat-dialog-close (click)="save()">Send</button>
+</mat-dialog-actions>

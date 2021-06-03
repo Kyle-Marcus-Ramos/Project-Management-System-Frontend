@@ -38,6 +38,8 @@ export class BoardComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
     if (!localStorage.getItem('foo')) {
       localStorage.setItem('foo', 'no reload')
       location.reload()
@@ -49,7 +51,7 @@ export class BoardComponent implements OnInit {
     this.card = new SaveKanbanRequestDTO();
 
     this.card.projectId = JSON.parse(sessionStorage.getItem("projectId"));
-    console.log(this.card);
+    console.log(this.card.projectId);
 
     // Hardcoded for Demonstration Purposes only
     // this.card.projectId = 11;
@@ -60,7 +62,7 @@ export class BoardComponent implements OnInit {
       if (res !== null) {
         this.lists = res;
       }
-    }), 9000);
+    }), 4000);
 
     // this.lists = board.lists;
 

@@ -94,6 +94,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ProjectComponent } from './components/project/project.component';
+import { NgVerticalTimelineModule } from 'ng-vertical-timeline';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -194,7 +195,8 @@ FullCalendarModule.registerPlugins([
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    NgVerticalTimelineModule
   ],
   providers: [LocalService],
   bootstrap: [AppComponent]

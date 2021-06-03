@@ -50,6 +50,12 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (!localStorage.getItem('foo')) {
+      localStorage.setItem('foo', 'no reload')
+      location.reload()
+    } else {
+      localStorage.removeItem('foo')
+    }
     this.account = new GetAccountByEmailPasswordRequestDTO();
 
     var response = JSON.parse(sessionStorage.getItem("loginResponse"));

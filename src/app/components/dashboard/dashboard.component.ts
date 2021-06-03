@@ -48,7 +48,7 @@ export class DashboardComponent {
         // sessionStorage.setItem("projects", res)
       }
 
-    }), 9000);
+    }), 1500);
   }
 
   routeToKanbanBoard(item) {

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Settings</title>
+  <title>Profile Page</title>
 
   <!-- Custom Css -->
   <!--<link rel="stylesheet" href="style.css">-->
@@ -73,74 +73,42 @@
 
   <!-- Main -->
   <div class="main">
-    <h2 style="margin-bottom: 40px;">Profile Page</h2>
+    <h2 style="margin-bottom: 40px;">Project Details</h2>
     <div class="card">
       <div class="card-body">
         <i class="fa fa-pen fa-xs edit"></i>
         <table>
           <tbody>
             <tr>
-              <td>First Name</td>
+              <td>Project Title</td>
               <td>:</td>
-              <td>FirstName</td>
+              <td>{{this.projectDetails.projectName}}</td>
             </tr>
             <tr>
-              <td>Last Name</td>
+              <td>Project Leader</td>
               <td>:</td>
-              <td>LastName</td>
+              <td>{{this.projectDetails.leader}}</td>
             </tr>
             <tr>
-              <td>Email</td>
+              <td>Project Budget</td>
               <td>:</td>
-              <td>email@gmail.com</td>
+              <td>{{this.projectDetails.budget}}</td>
             </tr>
             <tr>
-              <td>Projects</td>
+              <td>Project Duration</td>
               <td>:</td>
-              <td>Project 1</td>
+              <td>{{this.projectDetails.duration}}</td>
+            </tr>
+            <tr>
+              <td>Project Members</td>
+              <td>:</td>
+              <td>{{this.projectDetails.projectEmail}}</td>
             </tr>
 
           </tbody>
         </table>
       </div>
     </div>
-    <!--
-        <h2>SOCIAL MEDIA</h2>
-        <div class="card">
-            <div class="card-body">
-                <i class="fa fa-pen fa-xs edit"></i>
-                <div class="social-media">
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-invision fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span class="fa-stack fa-sm">
-                        <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-snapchat fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div>
-            </div>
-        </div>-->
   </div>
   <!-- End -->
 </body>
