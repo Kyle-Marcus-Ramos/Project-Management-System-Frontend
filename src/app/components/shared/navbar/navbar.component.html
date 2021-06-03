@@ -17,12 +17,14 @@
       </li>
       <li class="nav-item sidebar-right">
 
-        <a class="nav-link cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span
-            class="medium">Admin &nbsp; /
+        <a class="nav-link cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="medium">
+            {{this.profileDetails.isAdmin}}
+            &nbsp; /
           </span>
-          &nbsp; <span class="medium">User</span> &nbsp; </a>
+          &nbsp; <span class="medium">{{this.profileDetails.name}}</span> &nbsp; </a>
         <div class="dropdown-menu dropdown-menu-right animate slideIn">
-          <a class="dropdown-item" href="#">Logout</a>
+          <a class="dropdown-item" (click)="logout()">Logout</a>
         </div>
       </li>
     </ul>

@@ -37,13 +37,13 @@
             <i class="fa fa-camera"></i><em>Project Settings</em>
           </a>
         </li>
-        <li>
+        <li *ngIf="this.isAdmin === true">
           <a class="s-sidebar__nav-link" (click)="goToAdmin()">
             <i class="fa fa-camera"></i><em>Admin</em>
           </a>
         </li>
         <li>
-          <a class="s-sidebar__nav-link" href="#0" style="margin-top: 32vh">
+          <a class="s-sidebar__nav-link" (click)="logout()" style="margin-top: 32vh">
             <i class="fa fa-camera"></i><em>Log out</em>
           </a>
         </li>

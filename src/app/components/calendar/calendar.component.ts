@@ -39,7 +39,7 @@ export class CalendarComponent {
       if (res !== null) {
         res.forEach((item) => {
           this.events.push({
-            title: item.title, date: new Date(item.dueDate)
+            title: item.title, date: new Date(item.estimate)
           })
         });
         console.log(this.events);

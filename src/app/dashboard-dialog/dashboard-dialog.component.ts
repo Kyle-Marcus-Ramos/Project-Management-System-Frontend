@@ -3,6 +3,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { saveDashboardDTO } from '../model/api/dashboardModal';
+import { GetProjectInformationRequestDTO } from '../model/api/projectInfo';
 import { DashboardModalService } from '../service/api/dashboardModal.service';
 @Component({
   selector: 'app-dashboard-dialog',
@@ -25,11 +26,12 @@ export class DashboardDialogComponent implements OnInit {
   productForm: FormGroup;
 
   public card: saveDashboardDTO;
-
+  public project: GetProjectInformationRequestDTO;
 
   ngOnInit(): void {
     this.card = new saveDashboardDTO();
 
+    this.project = new GetProjectInformationRequestDTO();
 
     this.productForm = this.fb.group({
       title: [],
@@ -45,7 +47,13 @@ export class DashboardDialogComponent implements OnInit {
     // console.log(this.productForm.value);
     var array = [];
     this.card.email = (this.productForm).value.collaborator.email;
+    this.project.leader = this.project.leader;
+    this.project.budget = this.project.budget;
+    this.project.duration = this.project.duration;
 
+    sessionStorage.setItem("leader", JSON.stringify(this.project.leader));
+    sessionStorage.setItem("budget", JSON.stringify(this.project.budget));
+    sessionStorage.setItem("duration", JSON.stringify(this.project.duration));
 
     // console.log((this.productForm).value.collaborator);
 
@@ -68,6 +76,8 @@ export class DashboardDialogComponent implements OnInit {
 
     this.card.email = array;
     this.card.name = this.card.name;
+    sessionStorage.setItem("projectName", JSON.stringify(this.card.name));
+    sessionStorage.setItem("projectEmail", JSON.stringify(this.card.email));
     this.card.accountId = this.accountId;
     console.log(this.card)
 

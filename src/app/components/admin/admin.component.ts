@@ -39,7 +39,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class AdminComponent implements OnInit, AfterViewInit {
   show = true;
-  displayedColumns: string[] = ['tm', 'employeeId', 'employeeName', 'status'];
+  displayedColumns: string[] = ['tm', 'employeeId', 'employeeName'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   pipe: DatePipe;
   filtered: boolean;

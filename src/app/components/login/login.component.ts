@@ -27,6 +27,12 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (!localStorage.getItem('foo')) {
+      localStorage.setItem('foo', 'no reload')
+      location.reload()
+    } else {
+      localStorage.removeItem('foo')
+    }
     this.account = new GetAccountByEmailPasswordRequestDTO();
   }
 
@@ -43,6 +49,10 @@ export class LoginComponent implements OnInit {
         })
 
         sessionStorage.setItem("idAccount", JSON.stringify(res.accountId));
+        sessionStorage.setItem("loginResponse", JSON.stringify(res));
+
+        console.log(JSON.parse(sessionStorage.getItem("loginResponse")));
+
         this.router.navigateByUrl('/dashboard/dashboard');
       }
 
